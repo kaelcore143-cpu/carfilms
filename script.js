@@ -2,10 +2,23 @@
 // CARFILMS — script.js
 // =============================================
 
-// ── NAVBAR SCROLL EFFECT ──────────────────
-const nav = document.getElementById('nav');
+// ── NAVBAR SCROLL OPTIMIZADO ─────────────────
+let ticking = false;
+function updateNavbar() {
+  const nav = document.getElementById('nav');
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+  ticking = false;
+}
+
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
+  if (!ticking) {
+    requestAnimationFrame(updateNavbar);
+    ticking = true;
+  }
 }, { passive: true });
 
 // ── MOBILE MENU ───────────────────────────
@@ -249,16 +262,39 @@ class PerformanceMonitor {
   }
 }
 
-// ── INIT OPTIMIZADO ───────────────────────────
+// ── ERROR HANDLING & SECURITY ─────────────────
+window.addEventListener('error', (e) => {
+  console.warn('Error controlado:', e.error);
+  // Continuar ejecución sin interrumpir experiencia
+});
+
+// ── INIT OPTIMIZADO CON SEGURIDAD ─────────────
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializar con prioridades
-  const videoOptimizer = new VideoOptimizer();
-  const performanceMonitor = new PerformanceMonitor();
-  
-  // Scroll reveal con delay para no bloquear carga inicial
-  setTimeout(() => {
-    setupScrollReveal();
-  }, 100);
+  try {
+    // Validar que estamos en el dominio correcto
+    if (window.location.hostname !== 'carfilms.com.co' && 
+        window.location.hostname !== 'localhost' && 
+        !window.location.hostname.includes('github.io')) {
+      console.warn('Dominio no autorizado detectado');
+    }
+    
+    // Inicializar con prioridades
+    const videoOptimizer = new VideoOptimizer();
+    const performanceMonitor = new PerformanceMonitor();
+    
+    // Scroll reveal con delay para no bloquear carga inicial
+    setTimeout(() => {
+      setupScrollReveal();
+    }, 100);
+    
+  } catch (error) {
+    console.error('Error en inicialización:', error);
+    // Fallback básico
+    document.querySelectorAll('video').forEach(video => {
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+    });
+  }
 });
 
 // ── LOAD OPTIMIZADO ───────────────────────────
