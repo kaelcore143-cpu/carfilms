@@ -41,11 +41,12 @@ document.querySelectorAll('.mob-lnk').forEach(link => {
   });
 });
 
-// ── VIDEO LAZY LOADING CON INTERSECTION OBSERVER ───────────
+// ── VIDEO LAZY LOADING ULTRA OPTIMIZADO ────────
 class VideoOptimizer {
   constructor() {
     this.videos = document.querySelectorAll('video');
     this.isMobile = window.innerWidth <= 768;
+    this.loadedVideos = new Set();
     this.init();
   }
 
@@ -53,6 +54,14 @@ class VideoOptimizer {
     this.setupIntersectionObserver();
     this.optimizeVideoSources();
     this.setupPerformanceMonitoring();
+    this.loadHeroVideo();
+  }
+
+  loadHeroVideo() {
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo && heroVideo.dataset.src) {
+      this.loadVideo(heroVideo);
+    }
   }
 
   setupIntersectionObserver() {
@@ -68,56 +77,65 @@ class VideoOptimizer {
         const video = entry.target;
         
         if (entry.isIntersecting) {
-          this.playVideo(video);
+          // Cargar video si no está cargado
+          if (!this.loadedVideos.has(video)) {
+            this.loadVideo(video);
+          } else {
+            this.playVideo(video);
+          }
         } else {
           this.pauseVideo(video);
         }
       });
     }, options);
 
-    // Observar todos los videos
+    // Observar todos los videos excepto el hero
     this.videos.forEach(video => {
-      // Pausar todos los videos inicialmente
       video.pause();
       video.preload = 'none';
       
-      // Solo observar si no está en hero (hero video siempre visible)
       if (!video.closest('#hero')) {
         this.observer.observe(video);
-      } else {
-        // Hero video: reproducir solo cuando esté listo
-        video.addEventListener('canplay', () => {
-          if (this.isVisible(video.closest('#hero'))) {
-            this.playVideo(video);
-          }
-        }, { once: true });
       }
     });
   }
 
-  playVideo(video) {
-    if (video.dataset.playing === 'true') return;
+  loadVideo(video) {
+    if (this.loadedVideos.has(video) || !video.dataset.src) return;
     
-    video.preload = 'auto';
-    video.play().catch(() => {
-      // Si falla autoplay, intentar con muted
-      video.muted = true;
+    const source = document.createElement('source');
+    source.src = video.dataset.src;
+    source.type = 'video/mp4';
+    video.appendChild(source);
+    
+    video.load();
+    this.loadedVideos.add(video);
+    
+    // Marcar como cargado visualmente
+    video.classList.add('loaded');
+    
+    // Intentar autoplay
+    this.playVideo(video);
+  }
+
+  playVideo(video) {
+    if (video.paused) {
       video.play().catch(() => {
-        console.log('Video playback blocked');
+        video.muted = true;
+        video.play().catch(() => {});
       });
-    });
-    video.dataset.playing = 'true';
+    }
   }
 
   pauseVideo(video) {
-    if (video.dataset.playing !== 'true') return;
-    
-    video.pause();
-    video.dataset.playing = 'false';
-    
-    // Liberar recursos en móvil
-    if (this.isMobile) {
-      video.preload = 'none';
+    if (!video.paused) {
+      video.pause();
+      video.dataset.playing = 'false';
+      
+      // Liberar recursos en móvil
+      if (this.isMobile) {
+        video.preload = 'none';
+      }
     }
   }
 
@@ -177,31 +195,26 @@ class VideoOptimizer {
   }
 }
 
-// ── SCROLL REVEAL OPTIMIZADO ───────────────
+// ── SCROLL REVEAL ULTRA OPTIMIZADO ────────────
 function setupScrollReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('on');
-        observer.unobserve(entry.target); // animar solo una vez
+        observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.1, // Reducido para mejor rendimiento
-    rootMargin: '0px 0px -40px 0px' // Menos margen para activar antes
+    threshold: 0.05, // Más agresivo para móvil
+    rootMargin: '0px 0px -20px 0px'
   });
 
-  // Service sections con delay para mejor performance
-  requestAnimationFrame(() => {
-    document.querySelectorAll('.service-section').forEach(section => {
-      observer.observe(section);
-    });
-
-    // Elementos genéricos con clase .rv
-    document.querySelectorAll('.rv').forEach(el => {
-      observer.observe(el);
-    });
-  });
+  // Usar setTimeout para no bloquear carga inicial
+  setTimeout(() => {
+    // Solo observar elementos visibles inicialmente
+    const elements = document.querySelectorAll('.service-section, .rv');
+    elements.forEach(el => observer.observe(el));
+  }, 200);
 }
 
 // ── PERFORMANCE MONITOR ───────────────────────
@@ -241,24 +254,37 @@ class PerformanceMonitor {
   }
 
   optimizeOnLowPerformance() {
+    // Solo monitorear en móviles o si hay baja batería
+    const isMobile = window.innerWidth <= 768;
+    const hasLowBattery = navigator.getBattery ? 
+      (async () => (await navigator.getBattery()).level < 0.2)() : false;
+    
+    if (!isMobile) return;
+    
     setInterval(() => {
       const currentFPS = this.getCurrentFPS();
       
-      if (currentFPS < 30) {
-        // Bajo rendimiento: reducir animaciones
+      if (currentFPS < 25) {
+        // Bajo rendimiento crítico
         document.body.classList.add('low-performance');
-        
-        // Pausar videos no visibles
-        document.querySelectorAll('video').forEach(video => {
-          if (!video.closest('#hero')) {
-            video.pause();
-          }
-        });
+        this.pauseAllVideos();
+      } else if (currentFPS < 35) {
+        // Rendimiento bajo
+        document.body.classList.add('low-performance');
       } else if (currentFPS > 45) {
-        // Buen rendimiento: restaurar animaciones
+        // Buen rendimiento
         document.body.classList.remove('low-performance');
       }
-    }, 2000);
+    }, 3000); // Menos frecuente para ahorrar batería
+  }
+
+  pauseAllVideos() {
+    document.querySelectorAll('video').forEach(video => {
+      if (!video.closest('#hero')) {
+        video.pause();
+        video.preload = 'none';
+      }
+    });
   }
 }
 
@@ -268,31 +294,37 @@ window.addEventListener('error', (e) => {
   // Continuar ejecución sin interrumpir experiencia
 });
 
-// ── INIT OPTIMIZADO CON SEGURIDAD ─────────────
+// ── INIT ULTRA OPTIMIZADO ───────────────────
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    // Validar que estamos en el dominio correcto
-    if (window.location.hostname !== 'carfilms.com.co' && 
-        window.location.hostname !== 'localhost' && 
-        !window.location.hostname.includes('github.io')) {
-      console.warn('Dominio no autorizado detectado');
+    // Validación ligera de dominio
+    const allowedHosts = ['carfilms.com.co', 'localhost'];
+    if (!allowedHosts.some(host => window.location.hostname.includes(host))) {
+      console.warn('Dominio no autorizado');
     }
     
-    // Inicializar con prioridades
-    const videoOptimizer = new VideoOptimizer();
-    const performanceMonitor = new PerformanceMonitor();
+    // Inicialización progresiva
+    requestIdleCallback(() => {
+      // 1. Video optimizer - Prioridad alta
+      new VideoOptimizer();
+    }, { timeout: 100 });
     
-    // Scroll reveal con delay para no bloquear carga inicial
-    setTimeout(() => {
+    requestIdleCallback(() => {
+      // 2. Performance monitor - Prioridad media
+      new PerformanceMonitor();
+    }, { timeout: 500 });
+    
+    requestIdleCallback(() => {
+      // 3. Scroll reveal - Prioridad baja
       setupScrollReveal();
-    }, 100);
+    }, { timeout: 1000 });
     
   } catch (error) {
     console.error('Error en inicialización:', error);
-    // Fallback básico
+    // Fallback ultra ligero
     document.querySelectorAll('video').forEach(video => {
-      video.setAttribute('muted', '');
-      video.setAttribute('playsinline', '');
+      video.muted = true;
+      video.playsinline = true;
     });
   }
 });

@@ -71,8 +71,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Critical Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@600&display=swap"></noscript>
   
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
@@ -111,6 +112,7 @@
 
   <ul class="nav-links" role="list">
     <li><a href="#servicio-ppf">Servicios</a></li>
+    <li><a href="#galeria">Galería</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
     <li><a href="#testimonios">Testimonios</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -126,6 +128,7 @@
 <nav id="mob-nav" aria-label="Menú móvil">
   <div class="mob-links">
     <a href="#servicio-ppf" class="mob-lnk">Servicios</a>
+    <a href="#galeria"       class="mob-lnk">Galería</a>
     <a href="#nosotros"     class="mob-lnk">Nosotros</a>
     <a href="#testimonios"  class="mob-lnk">Testimonios</a>
     <a href="#contacto"     class="mob-lnk">Contacto</a>
@@ -136,8 +139,8 @@
 <!-- ====== HERO ====== -->
 <section id="hero" aria-label="Portada Carfilms">
 
-  <video class="hero-video" muted loop playsinline preload="metadata">
-    <source src="assets/videos/6157781-hd_1920_1080_30fps.mp4" type="video/mp4">
+  <video class="hero-video" muted loop playsinline preload="none" data-src="assets/videos/6157781-hd_1920_1080_30fps.mp4">
+    <!-- Video se cargará con JavaScript cuando sea visible -->
   </video>
 
   <div class="hero-overlay" aria-hidden="true"></div>
@@ -213,9 +216,7 @@
 
 <!-- ====== PPF ====== -->
 <section class="service-section" id="servicio-ppf">
-  <video class="service-video" muted loop playsinline preload="none">
-    <source src="assets/videos/6157786-hd_1920_1080_30fps.mp4" type="video/mp4">
-  </video>
+  <video class="service-video" muted loop playsinline preload="none" data-src="assets/videos/6157786-hd_1920_1080_30fps.mp4">
   <div class="service-overlay"></div>
   <div class="service-content">
     <h2 class="service-title">PPF</h2>
@@ -227,9 +228,7 @@
 
 <!-- ====== POLARIZADO ====== -->
 <section class="service-section" id="servicio-polarizado">
-  <video class="service-video" muted loop playsinline preload="none">
-    <source src="assets/videos/6157985-hd_1920_1080_30fps.mp4" type="video/mp4">
-  </video>
+  <video class="service-video" muted loop playsinline preload="none" data-src="assets/videos/6157985-hd_1920_1080_30fps.mp4">
   <div class="service-overlay"></div>
   <div class="service-content">
     <h2 class="service-title">Polarizado</h2>
@@ -241,9 +240,7 @@
 
 <!-- ====== WRAP ====== -->
 <section class="service-section" id="servicio-wrap">
-  <video class="service-video" muted loop playsinline preload="none">
-    <source src="assets/videos/6159288-hd_1920_1080_30fps.mp4" type="video/mp4">
-  </video>
+  <video class="service-video" muted loop playsinline preload="none" data-src="assets/videos/15448797-hd_1920_1080_60fps.mp4">
   <div class="service-overlay"></div>
   <div class="service-content">
     <h2 class="service-title">Wrap</h2>
@@ -255,9 +252,7 @@
 
 <!-- ====== DETAILING ====== -->
 <section class="service-section" id="servicio-detailing">
-  <video class="service-video" muted loop playsinline preload="none">
-    <source src="assets/videos/15448797-hd_1920_1080_60fps.mp4" type="video/mp4">
-  </video>
+  <video class="service-video" muted loop playsinline preload="none" data-src="assets/videos/6159288-hd_1920_1080_30fps.mp4">
   <div class="service-overlay"></div>
   <div class="service-content">
     <h2 class="service-title">Detailing</h2>
@@ -287,6 +282,88 @@
        target="_blank" rel="noopener" class="service-btn" style="opacity:1;transform:none;">
       Cotizar por WhatsApp
     </a>
+  </div>
+</section>
+
+<!-- ====== GALERÍA FACEBOOK ====== -->
+<section class="facebook-gallery" id="galeria" aria-label="Galería de trabajos">
+  <div class="container">
+    <div class="gallery-header rv">
+      <span class="lbl">Nuestros Trabajos</span>
+      <h2 class="title">Conoce Nuestros <em class="gold">Resultados</em></h2>
+      <div class="divider"></div>
+      <p>Explora nuestra galería de trabajos realizados con la más alta calidad y atención al detalle. Síguenos en Facebook para ver más proyectos.</p>
+    </div>
+    
+    <div class="gallery-mosaic rv">
+      <!-- Fila 1 -->
+      <a href="https://www.facebook.com/nanoceramicaypolarizados/" target="_blank" rel="noopener" class="gallery-item gallery-item-large" aria-label="Ver más en Facebook">
+        <img src="assets/img/pexels-aleksey-kuprikov-1883853-3786092.jpg" alt="Trabajo de polarizado premium" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <div class="gallery-text">Ver más en Facebook</div>
+        </div>
+      </a>
+      
+      <a href="https://www.facebook.com/nanoceramicaypolarizados/" target="_blank" rel="noopener" class="gallery-item" aria-label="Ver más en Facebook">
+        <img src="assets/img/pexels-alexazabache-3879065.jpg" alt="Detalle de cerámica vehicular" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+      
+      <a href="https://www.facebook.com/nanoceramicaypolarizados/" target="_blank" rel="noopener" class="gallery-item" aria-label="Ver más en Facebook">
+        <img src="assets/img/pexels-prime-cinematics-1005175-2036544.jpg" alt="Trabajo de vinilado wrap" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Fila 2 -->
+      <a href="https://www.facebook.com/nanoceramicaypolarizados/" target="_blank" rel="noopener" class="gallery-item" aria-label="Ver más en Facebook">
+        <img src="assets/img/pexels-svjae-3752194.jpg" alt="Protección PFL aplicada" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+      
+      <a href="https://www.facebook.com/nanoceramicaypolarizados/" target="_blank" rel="noopener" class="gallery-item gallery-item-wide" aria-label="Ver más en Facebook">
+        <img src="assets/img/pexels-aleksey-kuprikov-1883853-3786092.jpg" alt="Resultado final de detailing" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <div class="gallery-text">Explora nuestra galería completa</div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="gallery-footer rv">
+      <a href="https://www.facebook.com/nanoceramicaypolarizados/" target="_blank" rel="noopener" class="service-btn" style="opacity:1;transform:none;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+        Seguir en Facebook
+      </a>
+    </div>
   </div>
 </section>
 
