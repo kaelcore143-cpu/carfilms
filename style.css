@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -29,6 +30,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  scroll-snap-type: y mandatory;
 }
 
 .container {
@@ -147,10 +149,16 @@ body {
   color: var(--gold);
 }
 
+/* ===== SECCIONES BASE ===== */
+section {
+  scroll-snap-align: start;
+  position: relative;
+}
+
 /* ===== HERO INMERSIVO ===== */
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,8 +271,11 @@ body {
 
 /* ===== SOBRE NOSOTROS ===== */
 .nosotros {
-  padding: 6rem 0;
+  height: 100vh;
   background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease;
@@ -307,19 +318,21 @@ body {
 
 /* ===== SERVICIOS ===== */
 .servicios {
-  padding: 6rem 0;
   background: var(--dark);
 }
 
 .servicio {
   position: relative;
-  min-height: 400px;
-  margin-bottom: 3rem;
-  border-radius: 15px;
+  height: 100vh;
+  border-radius: 0;
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
 }
 
 .servicio.visible {
@@ -399,11 +412,26 @@ body {
   transform: translateY(-2px);
 }
 
+/* ===== VIDEO STATES ===== */
+.video-active {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.servicio-video:not(.video-active) {
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+}
+
 /* ===== RESEÑAS ===== */
 .resenas {
-  padding: 6rem 0;
+  height: 100vh;
   background: var(--black);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
 }
 
 .resenas-content {
@@ -445,8 +473,12 @@ body {
 
 /* ===== CONTACTO ===== */
 .contacto {
-  padding: 6rem 0;
+  height: 100vh;
   background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
 }
 
 .contacto-content {
@@ -527,9 +559,13 @@ body {
 
 /* ===== FOOTER ===== */
 .footer {
-  padding: 3rem 0;
+  height: 100vh;
   background: var(--black);
   border-top: 1px solid rgba(201, 168, 76, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
 }
 
 .footer-content {
@@ -578,10 +614,22 @@ body {
   height: 30px;
 }
 
+/* ===== NAV ACTIVE STATE ===== */
+.nav-menu a.active,
+.mobile-link.active {
+  color: var(--gold);
+  font-weight: 600;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
+  }
+  
+  /* Disable scroll snap on mobile for better performance */
+  body {
+    scroll-snap-type: none;
   }
   
   .nav-menu {
