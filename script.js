@@ -97,29 +97,87 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ============================================
-    // Video Background Handling
+    // HERO VIDEO - Normal autoplay
     // ============================================
     const heroVideo = document.querySelector('.hero-video');
     
     if (heroVideo) {
-        // Ensure video plays on mobile
-        heroVideo.play().catch(function(error) {
-            console.log('Autoplay prevented:', error);
-        });
-        
-        // Pause video when not visible (performance)
-        const videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    heroVideo.play();
-                } else {
-                    heroVideo.pause();
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        videoObserver.observe(heroVideo);
+        heroVideo.play().catch(e => console.log('Hero autoplay prevented:', e));
     }
+    
+    // ============================================
+    // LAZY VIDEO LOADING FOR RESULTS SECTION - Click to play, click outside to stop
+    // ============================================
+    const videoContainers = document.querySelectorAll('.video-container');
+    let currentlyPlayingContainer = null;
+    
+    videoContainers.forEach(container => {
+        const video = container.querySelector('video');
+        const poster = container.querySelector('.video-poster');
+        const source = video ? video.querySelector('source') : null;
+        
+        if (!video || !poster || !source) return;
+        
+        // Click handler to load and play video
+        poster.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent triggering document click
+            
+            // Stop any currently playing video
+            if (currentlyPlayingContainer && currentlyPlayingContainer !== container) {
+                const currentVideo = currentlyPlayingContainer.querySelector('video');
+                if (currentVideo) {
+                    currentVideo.pause();
+                    currentVideo.currentTime = 0;
+                }
+                currentlyPlayingContainer.classList.remove('playing');
+            }
+            
+            // Load video source if not loaded
+            if (source.dataset.src && !source.src) {
+                source.src = source.dataset.src;
+                video.load();
+            }
+            
+            // Add playing class to show video
+            container.classList.add('playing');
+            currentlyPlayingContainer = container;
+            
+            // Play video
+            video.play().catch(e => {
+                console.log('Video play failed:', e);
+                container.classList.remove('playing');
+                currentlyPlayingContainer = null;
+            });
+        });
+    });
+    
+    // Click outside to stop any playing video
+    document.addEventListener('click', function(e) {
+        if (currentlyPlayingContainer && !currentlyPlayingContainer.contains(e.target)) {
+            const video = currentlyPlayingContainer.querySelector('video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+            currentlyPlayingContainer.classList.remove('playing');
+            currentlyPlayingContainer = null;
+        }
+    });
+    
+    // ============================================
+    // Performance: Pause videos when tab hidden
+    // ============================================
+    document.addEventListener('visibilitychange', () => {
+        const allVideos = document.querySelectorAll('video');
+        allVideos.forEach(video => {
+            if (document.hidden) {
+                video.dataset.wasPlaying = !video.paused;
+                video.pause();
+            } else if (video.dataset.wasPlaying === 'true') {
+                video.play().catch(() => {});
+            }
+        });
+    });
     
     // ============================================
     // WhatsApp Button Tracking
