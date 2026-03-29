@@ -1,270 +1,556 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content="#0a0a0a">
-  
-  <!-- SEO Optimizado -->
-  <title>Carfilms Estética Vehicular | PPF, Polarizado & Detailing Premium en Medellín</title>
-  <meta name="description" content="Expertos en PPF, polarizado, detailing y protección vehicular premium en Medellín. Servicios profesionales con garantía de calidad.">
-  <meta name="keywords" content="PPF Medellín, polarizado autos Medellín, detailing vehicular, protección pintura, Carfilms, estética vehicular">
-  <meta name="author" content="Carfilms Estética Vehicular">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://carfilms.com.co/">
-  
-  <!-- Performance Optimized Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@700&display=swap" rel="stylesheet">
-  
-  <!-- Optimized CSS -->
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Crect x='0.5' y='0.5' width='31' height='31' rx='5.5' stroke='%23c9a84c' stroke-width='1' fill='none'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23c9a84c' font-family='Arial' font-size='14' font-weight='bold'%3ECF%3C/text%3E%3C/svg%3E">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarFilms Estética Vehicular | Protección Premium en Medellín</title>
+    <meta name="description" content="Protección premium para tu vehículo en Medellín. PPF, polarizado, detailing y wrap profesional con acabados de nivel premium.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo-section">
+                <img src="logo.jpg" alt="CarFilms Estética Vehicular" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="logo-title">CarFilms</h1>
+                    <p class="logo-subtitle">Protección premium para vehículos en Medellín</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#resultados" class="nav-link">Resultados</a>
+                <a href="#testimonios" class="nav-link">Testimonios</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+                <a href="https://wa.me/573XXXXXXXXX" class="btn-nav-whatsapp" target="_blank">
+                    <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                    </svg>
+                    WhatsApp
+                </a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-<!-- ====== NAVBAR ====== -->
-<nav id="nav" class="navbar">
-  <div class="nav-container">
-    <a href="#hero" class="logo">
-      <img src="logo.jpg" alt="Carfilms" class="logo-img">
-      <span class="logo-text">CARFILMS</span>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#servicios" class="mobile-nav-link">Servicios</a>
+        <a href="#resultados" class="mobile-nav-link">Resultados</a>
+        <a href="#testimonios" class="mobile-nav-link">Testimonios</a>
+        <a href="#contacto" class="mobile-nav-link">Contacto</a>
+        <a href="https://wa.me/573XXXXXXXXX" class="btn-whatsapp-mobile" target="_blank">
+            <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+            </svg>
+            Cotizar por WhatsApp
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="15448797-hd_1920_1080_60fps.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <span class="badge-star">★★★★★</span>
+                <span class="badge-text">Más de 500 vehículos protegidos en Medellín</span>
+            </div>
+            <h2 class="hero-title">
+                <span class="title-line">Protección Premium</span>
+                <span class="title-line title-gold">Para Tu Vehículo</span>
+            </h2>
+            <p class="hero-subtitle">
+                PPF, polarizado, detailing y wrap profesional con acabados de nivel premium. 
+                Tu carro merece el mejor cuidado.
+            </p>
+            <div class="hero-cta">
+                <a href="https://wa.me/573XXXXXXXXX" class="btn-primary" target="_blank">
+                    <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                    </svg>
+                    Cotizar Ahora por WhatsApp
+                </a>
+                <a href="#servicios" class="btn-secondary">Ver Servicios</a>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                    <span>Garantía de 5 años</span>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                    <span>Entrega en 24-48h</span>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                        <path d="M14 2v6h6"/>
+                        <path d="M9 15l2 2 4-4"/>
+                    </svg>
+                    <span>Materiales certificados</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Protección Total</h3>
+                    <p class="benefit-text">Tu vehículo protegido contra rayones, piedras y desgaste diario con materiales de última generación.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Acabado Premium</h3>
+                    <p class="benefit-text">Resultados que superan las expectativas. Tu carro lucirá mejor que nuevo, con brillo y elegancia.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Garantía Real</h3>
+                    <p class="benefit-text">Todos nuestros trabajos incluyen garantía de hasta 5 años. Tu inversión está protegida.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Entrega Rápida</h3>
+                    <p class="benefit-text">Trabajos completados en 24-48 horas. Valoramos tu tiempo y tu necesidad de movilidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nuestros Servicios</span>
+                <h2 class="section-title">Servicios Premium de Estética Vehicular</h2>
+                <p class="section-subtitle">Cada servicio está diseñado para elevar la apariencia y protección de tu vehículo al máximo nivel.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="pexels-aleksey-kuprikov-1883853-3786092.jpg" alt="PPF Premium">
+                        <div class="service-overlay">
+                            <span class="service-price">Desde $1.200.000</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">PPF Premium</h3>
+                        <p class="service-description">Protege la pintura de rayones, piedras y desgaste diario con película de protección paint de última generación.</p>
+                        <ul class="service-features">
+                            <li>Autocuración de rayones leves</li>
+                            <li>Protección UV completa</li>
+                            <li>Garantía 5 años</li>
+                        </ul>
+                        <a href="https://wa.me/573XXXXXXXXX?text=Hola,%20quiero%20cotizar%20PPF%20Premium" class="btn-service" target="_blank">
+                            Cotizar PPF
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="pexels-alexazabache-3879065.jpg" alt="Polarizado Profesional">
+                        <div class="service-overlay">
+                            <span class="service-price">Desde $450.000</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Polarizado Profesional</h3>
+                        <p class="service-description">Reduce calor, protege el interior y mejora la estética del vehículo con películas de alta tecnología.</p>
+                        <ul class="service-features">
+                            <li>Rechazo de hasta 99% UV</li>
+                            <li>Reducción de calor del 80%</li>
+                            <li>Visibilidad óptima</li>
+                        </ul>
+                        <a href="https://wa.me/573XXXXXXXXX?text=Hola,%20quiero%20cotizar%20Polarizado" class="btn-service" target="_blank">
+                            Cotizar Polarizado
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="pexels-svjae-3752194.jpg" alt="Wrap Profesional">
+                        <div class="service-overlay">
+                            <span class="service-price">Desde $2.800.000</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Wrap Profesional</h3>
+                        <p class="service-description">Transforma la apariencia de tu vehículo completamente con vinilos de la más alta calidad.</p>
+                        <ul class="service-features">
+                            <li>Acabado impecable sin burbujas</li>
+                            <li>Removible sin dañar pintura</li>
+                            <li>Colores y acabados exclusivos</li>
+                        </ul>
+                        <a href="https://wa.me/573XXXXXXXXX?text=Hola,%20quiero%20cotizar%20Wrap" class="btn-service" target="_blank">
+                            Cotizar Wrap
+                        </a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="pexels-prime-cinematics-1005175-2036544.jpg" alt="Detailing Premium">
+                        <div class="service-overlay">
+                            <span class="service-price">Desde $350.000</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Detailing Premium</h3>
+                        <p class="service-description">Limpieza profunda, corrección de pintura y protección cerámica para un acabado espejo.</p>
+                        <ul class="service-features">
+                            <li>Corrección de swirls y hologramas</li>
+                            <li>Protección cerámica incluida</li>
+                            <li>Interior y exterior completo</li>
+                        </ul>
+                        <a href="https://wa.me/573XXXXXXXXX?text=Hola,%20quiero%20cotizar%20Detailing" class="btn-service" target="_blank">
+                            Cotizar Detailing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results" id="resultados">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Resultados Reales</span>
+                <h2 class="section-title">Antes y Después</h2>
+                <p class="section-subtitle">Los resultados hablan por sí solos. Tu vehículo puede lucir así.</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-images">
+                        <div class="result-before">
+                            <img src="6157781-hd_1920_1080_30fps.mp4" alt="Antes">
+                            <span class="result-label">Antes</span>
+                        </div>
+                        <div class="result-after">
+                            <img src="6157786-hd_1920_1080_30fps.mp4" alt="Después">
+                            <span class="result-label result-label-gold">Después</span>
+                        </div>
+                    </div>
+                    <div class="result-info">
+                        <h4 class="result-title">Corrección de Pintura + PPF</h4>
+                        <p class="result-car">BMW M4 Competition</p>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="result-images">
+                        <div class="result-before">
+                            <img src="6157985-hd_1920_1080_30fps.mp4" alt="Antes">
+                            <span class="result-label">Antes</span>
+                        </div>
+                        <div class="result-after">
+                            <img src="6159288-hd_1920_1080_30fps.mp4" alt="Después">
+                            <span class="result-label result-label-gold">Después</span>
+                        </div>
+                    </div>
+                    <div class="result-info">
+                        <h4 class="result-title">Detailing + Polarizado</h4>
+                        <p class="result-car">Mercedes-Benz C63 AMG</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonios</span>
+                <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+                <p class="section-subtitle">Más de 500 vehículos transformados y clientes satisfechos en Medellín.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"El resultado quedó perfecto, el carro parece nuevo. El PPF que me instalaron tiene una calidad increíble y el brillo es espectacular."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Juan Martínez</h4>
+                            <p class="author-car">Audi RS5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Profesionales de verdad. Me hicieron el wrap completo de mi carro en tiempo récord y el acabado es impecable. Sin duda el mejor lugar de Medellín."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CL</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Carlos López</h4>
+                            <p class="author-car">Porsche 911</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Llevé mi carro para detailing y polarizado. El servicio al cliente es excelente y el resultado superó mis expectativas. Recomendado 100%."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AG</div>
+                        <div class="author-info">
+                            <h4 class="author-name">Andrea Gómez</h4>
+                            <p class="author-car">Range Rover Sport</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section" id="confianza">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-left">
+                    <span class="section-tag">¿Por Qué Elegirnos?</span>
+                    <h2 class="section-title">Confianza y Experiencia Premium</h2>
+                    <p class="trust-description">En CarFilms no solo cuidamos tu vehículo, lo transformamos. Nuestro equipo está certificado internacionalmente y utilizamos solo materiales de las mejores marcas del mundo.</p>
+                    <div class="trust-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Vehículos Protegidos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Años de Garantía</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24h</span>
+                            <span class="stat-label">Entrega Express</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="trust-right">
+                    <div class="trust-features-list">
+                        <div class="trust-feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Materiales Premium</h4>
+                                <p>Trabajamos con 3M, XPEL, SunTek y las mejores marcas del mercado.</p>
+                            </div>
+                        </div>
+                        <div class="trust-feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Técnicos Certificados</h4>
+                                <p>Nuestro equipo tiene certificaciones internacionales en PPF y wraps.</p>
+                            </div>
+                        </div>
+                        <div class="trust-feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Instalación Precisa</h4>
+                                <p>Cada trabajo es realizado con la máxima precisión y atención al detalle.</p>
+                            </div>
+                        </div>
+                        <div class="trust-feature-item">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="M9 12l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Soporte Post-Venta</h4>
+                                <p>Estamos disponibles para cualquier consulta después de tu servicio.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info-section">
+                    <span class="section-tag">Contáctanos</span>
+                    <h2 class="section-title">Agenda Tu Cita Hoy</h2>
+                    <p class="contact-description">Protege tu vehículo con un acabado premium. Escríbenos por WhatsApp y recibe tu cotización en minutos.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Ubicación</h4>
+                                <p>Medellín, Colombia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Horario</h4>
+                                <p>Lun - Sáb: 8:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <p>+57 3XX XXX XXXX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta-section">
+                    <div class="cta-card">
+                        <h3 class="cta-title">¿Listo para transformar tu vehículo?</h3>
+                        <p class="cta-text">Recibe tu cotización personalizada en minutos. Atendemos todos los modelos y marcas.</p>
+                        <a href="https://wa.me/573XXXXXXXXX" class="btn-cta-large" target="_blank">
+                            <svg class="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                            </svg>
+                            Cotizar por WhatsApp Ahora
+                        </a>
+                        <p class="cta-note">Respuesta garantizada en menos de 10 minutos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo.jpg" alt="CarFilms" class="footer-logo">
+                    <p class="footer-tagline">Protección premium para vehículos en Medellín</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">PPF Premium</a></li>
+                        <li><a href="#servicios">Polarizado</a></li>
+                        <li><a href="#servicios">Wrap Profesional</a></li>
+                        <li><a href="#servicios">Detailing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#resultados">Resultados</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-title">Contacto</h4>
+                    <p>Medellín, Colombia</p>
+                    <p>Lun - Sáb: 8:00 AM - 6:00 PM</p>
+                    <a href="https://wa.me/573XXXXXXXXX" class="footer-whatsapp" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CarFilms Estética Vehicular. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed WhatsApp Button -->
+    <a href="https://wa.me/573XXXXXXXXX" class="whatsapp-fixed" target="_blank" aria-label="Cotizar por WhatsApp">
+        <div class="whatsapp-pulse"></div>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/>
+        </svg>
+        <span class="whatsapp-tooltip">¡Cotiza Ahora!</span>
     </a>
-    
-    <ul class="nav-menu">
-      <li><a href="#hero">Inicio</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#resenas">Reseñas</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    
-    <button id="burger" class="burger-btn">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
 
-<!-- MOBILE MENU -->
-<div id="mobile-menu" class="mobile-menu">
-  <a href="#hero" class="mobile-link">Inicio</a>
-  <a href="#nosotros" class="mobile-link">Nosotros</a>
-  <a href="#servicios" class="mobile-link">Servicios</a>
-  <a href="#resenas" class="mobile-link">Reseñas</a>
-  <a href="#contacto" class="mobile-link">Contacto</a>
-</div>
-
-<!-- ====== HERO INMERSIVO ====== -->
-<section id="hero" class="hero">
-  <video class="hero-video" muted loop autoplay playsinline>
-    <source src="6157781-hd_1920_1080_30fps.mp4" type="video/mp4">
-  </video>
-  
-  <div class="hero-overlay"></div>
-  
-  <!-- Llanta girando -->
-  <div class="hero-wheel">
-    <svg viewBox="0 0 100 100" class="wheel-svg">
-      <circle cx="50" cy="50" r="45" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
-      <circle cx="50" cy="50" r="35" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
-      <circle cx="50" cy="50" r="25" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.9"/>
-      <circle cx="50" cy="50" r="15" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.3"/>
-      <!-- Radios -->
-      <line x1="50" y1="5" x2="50" y2="95" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
-      <line x1="5" y1="50" x2="95" y2="50" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
-      <line x1="15" y1="15" x2="85" y2="85" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
-      <line x1="85" y1="15" x2="15" y2="85" stroke="#c9a84c" stroke-width="0.8" opacity="0.5"/>
-      <!-- Centro -->
-      <circle cx="50" cy="50" r="8" fill="#c9a84c"/>
-      <line x1="50" y1="8" x2="50" y2="20" stroke="#c9a84c" stroke-width="2"/>
-      <line x1="50" y1="80" x2="50" y2="92" stroke="#c9a84c" stroke-width="2"/>
-      <line x1="8" y1="50" x2="20" y2="50" stroke="#c9a84c" stroke-width="2"/>
-      <line x1="80" y1="50" x2="92" y2="50" stroke="#c9a84c" stroke-width="2"/>
-    </svg>
-  </div>
-  
-  <div class="hero-content">
-    <img src="logo.jpg" alt="Carfilms" class="hero-logo">
-    <h1 class="hero-name">CARFILMS</h1>
-    <p class="hero-slogan">Expertos en protección automotriz</p>
-    <a href="https://wa.me/573022469542?text=Hola%2C%20quiero%20conocer%20los%20servicios%20de%20Carfilms" 
-       class="hero-btn" target="_blank" rel="noopener">
-      Contactar por WhatsApp
-    </a>
-  </div>
-</section>
-
-<!-- ====== SOBRE NOSOTROS ====== -->
-<section id="nosotros" class="nosotros">
-  <div class="container">
-    <div class="nosotros-content">
-      <h2 class="nosotros-title">Sobre Nosotros</h2>
-      <p class="nosotros-text">
-        Carfilms es una empresa especializada en protección automotriz premium. Desde 2015, 
-        ofrecemos servicios de alta calidad con productos de última generación para proteger y embellecer tu vehículo.
-      </p>
-      <div class="nosotros-year">Fundado en 2015</div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== SERVICIOS ====== -->
-<section id="servicios" class="servicios">
-  <div class="container">
-    
-    <!-- PPF -->
-    <div class="servicio" id="ppf">
-      <video class="servicio-video" muted loop autoplay playsinline>
-        <source src="6157786-hd_1920_1080_30fps.mp4" type="video/mp4">
-      </video>
-      <div class="servicio-overlay"></div>
-      <div class="servicio-content">
-        <h3 class="servicio-name">PPF</h3>
-        <p class="servicio-desc">Protección invisible de alta tecnología que protege tu pintura contra rasguños, piedras y desgaste diario.</p>
-        <a href="https://wa.me/573022469542?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20PPF%20para%20mi%20veh%C3%ADculo" 
-           class="servicio-btn" target="_blank" rel="noopener">
-          Cotizar PPF
-        </a>
-      </div>
-    </div>
-    
-    <!-- POLARIZADO -->
-    <div class="servicio" id="polarizado">
-      <video class="servicio-video" muted loop autoplay playsinline>
-        <source src="6157985-hd_1920_1080_30fps.mp4" type="video/mp4">
-      </video>
-      <div class="servicio-overlay"></div>
-      <div class="servicio-content">
-        <h3 class="servicio-name">Polarizado</h3>
-        <p class="servicio-desc">Reduce el calor hasta 60%, bloquea rayos UV y da privacidad total con acabado premium y garantía de por vida.</p>
-        <a href="https://wa.me/573022469542?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20polarizado%20para%20mi%20veh%C3%ADculo" 
-           class="servicio-btn" target="_blank" rel="noopener">
-          Cotizar Polarizado
-        </a>
-      </div>
-    </div>
-    
-    <!-- WRAP -->
-    <div class="servicio" id="wrap">
-      <video class="servicio-video" muted loop autoplay playsinline>
-        <source src="6159288-hd_1920_1080_30fps.mp4" type="video/mp4">
-      </video>
-      <div class="servicio-overlay"></div>
-      <div class="servicio-content">
-        <h3 class="servicio-name">Wrap</h3>
-        <p class="servicio-desc">Transformación total con vinilado de alta calidad. Cambia color y estilo con acabados mate, brillantes o personalizados.</p>
-        <a href="https://wa.me/573022469542?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20wrap%20para%20mi%20veh%C3%ADculo" 
-           class="servicio-btn" target="_blank" rel="noopener">
-          Cotizar Wrap
-        </a>
-      </div>
-    </div>
-    
-    <!-- DETAILING -->
-    <div class="servicio" id="detailing">
-      <video class="servicio-video" muted loop autoplay playsinline>
-        <source src="15448797-hd_1920_1080_60fps.mp4" type="video/mp4">
-      </video>
-      <div class="servicio-overlay"></div>
-      <div class="servicio-content">
-        <h3 class="servicio-name">Detailing</h3>
-        <p class="servicio-desc">Restauración profesional con pulido, corrección de pintura, limpieza interior y protección cerámica para dejar tu auto como nuevo.</p>
-        <a href="https://wa.me/573022469542?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20detailing%20para%20mi%20veh%C3%ADculo" 
-           class="servicio-btn" target="_blank" rel="noopener">
-          Cotizar Detailing
-        </a>
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-<!-- ====== RESEÑAS ====== -->
-<section id="resenas" class="resenas">
-  <div class="container">
-    <div class="resenas-content">
-      <div class="rating-stars">
-        <svg class="star" viewBox="0 0 24 24" fill="#c9a84c">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-        <svg class="star" viewBox="0 0 24 24" fill="#c9a84c">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-        <svg class="star" viewBox="0 0 24 24" fill="#c9a84c">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-        <svg class="star" viewBox="0 0 24 24" fill="#c9a84c">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-        <svg class="star" viewBox="0 0 24 24" fill="#c9a84c" opacity="0.5">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-      </div>
-      <div class="rating-text">3.8 estrellas</div>
-      <div class="rating-count">Basado en 15 reseñas</div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== CONTACTO ====== -->
-<section id="contacto" class="contacto">
-  <div class="container">
-    <div class="contacto-content">
-      <h2 class="contacto-title">Contacto</h2>
-      <div class="contacto-info">
-        <div class="contacto-item">
-          <div class="contacto-icon">📱</div>
-          <div class="contacto-text">
-            <h3>Teléfono</h3>
-            <p>+57 302 246 9542</p>
-          </div>
-        </div>
-        <div class="contacto-item">
-          <div class="contacto-icon">📍</div>
-          <div class="contacto-text">
-            <h3>Ubicación</h3>
-            <p>Medellín, Colombia</p>
-          </div>
-        </div>
-        <div class="contacto-item">
-          <div class="contacto-icon">💬</div>
-          <div class="contacto-text">
-            <h3>WhatsApp</h3>
-            <p>Chat directo disponible</p>
-            <a href="https://wa.me/573022469542" class="contacto-btn" target="_blank" rel="noopener">
-              Iniciar chat
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== FOOTER ====== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h3 class="footer-name">CARFILMS</h3>
-        <p class="footer-year">Fundado en 2015</p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- WhatsApp Float -->
-<a href="https://wa.me/573022469542?text=Hola%2C%20quiero%20conocer%20los%20servicios%20de%20Carfilms" 
-   class="whatsapp-float" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24" fill="currentColor">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 006.358 1.85h.004c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
-  </svg>
-</a>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
