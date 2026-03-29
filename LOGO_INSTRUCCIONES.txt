@@ -1,0 +1,92 @@
+# 🎯 CARFILMS - INTEGRACIÓN DEL LOGO DEL LOBO
+
+## ✅ LO QUE CAMBIÓ
+
+El sitio ahora usa el **logo real del lobo** en lugar de las letras "CF".
+
+### Dónde se ve el logo:
+- ✅ **Navbar** (esquina superior izquierda)
+- ✅ **Favicon** (pestaña del navegador)
+- ✅ Todo integrado correctamente
+
+---
+
+## 📁 ESTRUCTURA DE CARPETAS NECESARIA
+
+Para que funcione correctamente, necesitas esta estructura:
+
+```
+steticavehicularcarfilms.com/
+├── index.html           ← Nuevo (con logo integrado)
+├── style.css
+├── buttons.css
+├── script.js
+│
+└── assets/
+    └── img/
+        └── carfilms-logo.jpg  ← ⭐ LOGO AQUÍ
+```
+
+---
+
+## 🚀 PASOS PARA IMPLEMENTAR
+
+### Paso 1: Descarga los archivos
+Descarga estos archivos:
+- ✅ `index.html` (actualizado)
+- ✅ `carfilms-logo.jpg` (nuevo)
+- ✅ `style.css`
+- ✅ `buttons.css`
+- ✅ `script.js`
+
+### Paso 2: Estructura en tu servidor
+
+1. Sube `index.html`, `style.css`, `buttons.css`, `script.js` a la **raíz** del dominio
+2. Crea la carpeta `assets/img/` si no existe
+3. Coloca `carfilms-logo.jpg` dentro de `assets/img/`
+
+### Paso 3: Verifica
+
+- [ ] Navbar muestra el logo del lobo (48x48px)
+- [ ] Logo aparece en la pestaña (favicon)
+- [ ] Logo se ve bien en móvil
+- [ ] Clic en el logo va al home (#hero)
+
+---
+
+## 📋 RESUMEN DE CAMBIOS
+
+### En el HTML:
+- ✅ Favicon ahora apunta a `carfilms-logo.jpg`
+- ✅ Navbar logo es imagen real, no SVG
+- ✅ Tamaño: 48x48px con border-radius
+- ✅ Responsive en móviles
+
+### Archivos nuevos/modificados:
+- ✅ `carfilms-logo.jpg` - Logo original del lobo
+- ✅ `index.html` - Actualizado con referencias al logo
+
+---
+
+## ⚠️ IMPORTANTE
+
+El logo **DEBE** estar en:
+```
+assets/img/carfilms-logo.jpg
+```
+
+Si lo pones en otro lugar, no funcionará. Verifica el path exacto.
+
+---
+
+## 🎨 RESULTADO FINAL
+
+Tu sitio Carfilms ahora tiene:
+- ✨ Logo profesional del lobo con corona
+- ✨ Integrado en navbar
+- ✨ Favicon personalizado
+- ✨ 100% premium
+
+---
+
+¡Listo para mañana! 🚀
