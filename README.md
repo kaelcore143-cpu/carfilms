@@ -140,7 +140,8 @@ CNAME: www -> carfilms-com-co.github.io
 - **Teléfono**: +57 302 246 9542
 - **WhatsApp**: https://wa.me/573022469542
 - **Dirección**: Carrera 70 #30a-156, Belén Rosales, Medellín
-- **Facebook**: https://www.facebook.com/nanoceramicaypolarizados/
+- **Facebook**: https://www.facebook.com/403772080418525?ref=NONE_xav_ig_profile_page_web
+- **Instagram**: https://www.instagram.com/ppf_nano_polarizados/
 
 ## 📄 Licencia
 

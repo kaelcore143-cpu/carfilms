@@ -1196,7 +1196,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
+    z-index: 100;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
     transition: var(--transition-medium);
 }
