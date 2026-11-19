@@ -584,14 +584,31 @@ button {
     position: relative;
     height: 250px;
     overflow: hidden;
+    background: var(--color-black-lighter);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.service-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.22) 0%, rgba(10, 10, 10, 0) 40%, rgba(10, 10, 10, 0.45) 100%);
+    pointer-events: none;
 }
 
 .service-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: var(--transition-slow);
 }
+
+/* Encuadre de cada foto dentro de la tarjeta */
+.service-image img.service-img-ppf { object-position: center 40%; }
+.service-image img.service-img-tint { object-position: center 12%; }
+.service-image img.service-img-wrap { object-position: center 55%; }
+.service-image img.service-img-detail { object-position: center 45%; }
 
 .service-card:hover .service-image img {
     transform: scale(1.05);
@@ -1421,8 +1438,8 @@ button {
         padding: 0.3rem 0.6rem;
     }
     
-    .service-placeholder-svg {
-        height: 200px;
+    .service-image {
+        height: 220px;
     }
 
     /* Arreglo de la sección Trust (estadísticas) en móvil */
@@ -1711,77 +1728,10 @@ button {
 }
 
 /* ============================================
-   PERFORMANCE OPTIMIZATIONS - SVG PLACEHOLDERS
-   ============================================ */
-
-/* Service SVG Placeholders (replaces heavy images) */
-.service-placeholder-svg {
-    position: relative;
-    height: 250px;
-    background: linear-gradient(145deg, var(--color-black-lighter) 0%, var(--color-black-light) 100%);
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.service-placeholder-svg svg {
-    width: 80px;
-    height: 80px;
-    color: var(--color-gold);
-    opacity: 0.8;
-    transition: var(--transition-medium);
-}
-
-.service-card:hover .service-placeholder-svg svg {
-    transform: scale(1.1);
-    opacity: 1;
-}
-
-.placeholder-label {
-    margin-top: var(--spacing-sm);
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--color-gold);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: rgba(212, 175, 55, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-full);
-}
-
-/* Service placeholder color variations */
-.service-placeholder-heat svg {
-    color: #ff6b35;
-}
-
-.service-placeholder-wrap svg {
-    color: #c0c0c0;
-}
-
-.service-placeholder-shine svg {
-    color: #ffffff;
-}
-
-/* ============================================
    MOBILE OPTIMIZATIONS
    ============================================ */
 
 @media (max-width: 768px) {
-    /* Reduce motion for performance */
-    .service-placeholder-svg svg {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .placeholder-label {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
-    }
-    
     /* Disable pulse animation on mobile */
     .whatsapp-pulse {
         animation: none;
@@ -1803,7 +1753,6 @@ button {
         animation: none;
     }
     
-    .service-card:hover .service-placeholder-svg svg,
     .service-card:hover .service-image img {
         transform: none;
     }
