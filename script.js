@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!video || !poster || !source) return;
         
-        // Click handler to load and play video
-        poster.addEventListener('click', function(e) {
+        // Load and play the video (shared by click and keyboard activation)
+        function playVideo(e) {
             e.stopPropagation(); // Prevent triggering document click
             
             // Stop any currently playing video
@@ -167,6 +167,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 container.classList.remove('playing');
                 currentlyPlayingContainer = null;
             });
+        }
+
+        poster.addEventListener('click', playVideo);
+
+        // Keyboard activation (Enter / Space)
+        poster.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                playVideo(e);
+            }
         });
     });
     
