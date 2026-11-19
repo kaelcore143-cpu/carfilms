@@ -1958,33 +1958,55 @@ button:focus-visible,
     gap: var(--spacing-sm);
 }
 
-.brand-wordmark {
+.brand-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 1.5rem 0.5rem;
+    min-height: 92px;
+    padding: 1.25rem;
     background: var(--color-black-lighter);
     border: 1px solid rgba(212, 175, 55, 0.15);
     border-radius: var(--radius-md);
-    color: var(--color-silver-light);
-    font-weight: 800;
-    font-size: clamp(0.65rem, 1.3vw, 0.95rem);
-    letter-spacing: 2px;
-    line-height: 1.4;
-    white-space: nowrap;
     transition: var(--transition-medium);
 }
 
-.brand-wordmark:hover {
+.brand-logo img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 34px;
+    opacity: 0.85;
+    transition: var(--transition-medium);
+}
+
+/* Ajuste óptico por marca: los wordmarks con mucho aire necesitan más altura */
+.brand-logo img.brand-logo-avery { max-height: 46px; filter: brightness(0) invert(1); }
+.brand-logo img.brand-logo-hexis { max-height: 34px; }
+.brand-logo img.brand-logo-starkpro { max-height: 32px; filter: brightness(1.25); }
+.brand-logo img.brand-logo-3m { max-height: 36px; filter: brightness(1.3) saturate(1.1); }
+.brand-logo img.brand-logo-xpel { max-height: 30px; }
+.brand-logo img.brand-logo-suntek { max-height: 30px; filter: brightness(0) invert(1); }
+
+.brand-logo:hover {
     border-color: rgba(212, 175, 55, 0.4);
-    color: var(--color-gold);
     transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
+.brand-logo:hover img {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
     .brands-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        min-height: 78px;
+        padding: 1rem 0.75rem;
     }
 }
 

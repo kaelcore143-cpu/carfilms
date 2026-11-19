@@ -13,11 +13,12 @@ HTML/CSS/JS vanilla, sin build ni frameworks. Alojado en **GitHub Pages** (rama 
 ```
 ├── index.html        # Única página (sitio one-page)
 ├── style.css         # Estilos + design tokens (variables CSS en :root)
-├── script.js         # Interactividad (lazy videos, menú móvil, toast)
+├── script.js         # Interactividad (menú móvil, scroll, animaciones, toast)
 ├── logo.jpg          # Logo + favicon
 ├── carfilms-logo.jpg # Logo (og:image)
 ├── *.mp4             # Video del hero
 ├── trabajo-*.jpg     # Fotos reales de trabajos (resultados y galería)
+├── logo-*.svg|png    # Logos de marcas (Avery Dennison, 3M, XPEL, SunTek, Hexis, StarkPro)
 ├── sitemap.xml       # Mapa del sitio (1 URL)
 ├── robots.txt        # Reglas de rastreo + sitemap
 └── CNAME             # Dominio personalizado de GitHub Pages
