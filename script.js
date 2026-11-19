@@ -47,23 +47,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ============================================
-    // Header Scroll Effect
+    // Header Scroll Effect (rAF-throttled)
     // ============================================
     const header = document.getElementById('header');
-    let lastScroll = 0;
-    
+    let scrollTicking = false;
+
     window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
-            header.style.background = 'rgba(10, 10, 10, 0.98)';
-            header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
-        } else {
-            header.style.background = 'rgba(10, 10, 10, 0.95)';
-            header.style.boxShadow = 'none';
-        }
-        
-        lastScroll = currentScroll;
+        if (scrollTicking) return;
+        scrollTicking = true;
+
+        requestAnimationFrame(function() {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+
+            scrollTicking = false;
+        });
     });
     
     // ============================================
@@ -125,6 +130,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ============================================
+    // Poster skeletons - shimmer until the image loads or fails
+    // ============================================
+    document.querySelectorAll('.video-poster-img').forEach(img => {
+        const poster = img.closest('.video-poster');
+        if (!poster) return;
+
+        const clearSkeleton = () => poster.classList.remove('skeleton');
+
+        if (img.complete && img.naturalWidth > 0) {
+            clearSkeleton();
+        } else {
+            img.addEventListener('load', clearSkeleton);
+            img.addEventListener('error', () => {
+                clearSkeleton();
+                if (poster.querySelector('.poster-error')) return;
+                const error = document.createElement('div');
+                error.className = 'poster-error';
+                error.setAttribute('role', 'alert');
+                error.innerHTML = '<span>Vista previa no disponible.</span><a href="https://wa.me/573022469542" target="_blank" rel="noopener noreferrer">Ver por WhatsApp</a>';
+                poster.appendChild(error);
+            });
+        }
+    });
+
+    // ============================================
     // LAZY VIDEO LOADING FOR RESULTS SECTION - Click to play, click outside to stop
     // ============================================
     const videoContainers = document.querySelectorAll('.video-container');
@@ -162,11 +192,22 @@ document.addEventListener('DOMContentLoaded', function() {
             currentlyPlayingContainer = container;
             
             // Play video
-            video.play().catch(e => {
-                console.log('Video play failed:', e);
+            video.play().catch(err => {
+                console.warn('Video play failed:', err);
                 container.classList.remove('playing');
                 currentlyPlayingContainer = null;
+                showVideoError(container);
             });
+        }
+
+        // Visible error state when the video cannot play
+        function showVideoError(container) {
+            if (container.querySelector('.video-error')) return;
+            const error = document.createElement('div');
+            error.className = 'video-error';
+            error.setAttribute('role', 'alert');
+            error.innerHTML = '<p>No pudimos cargar el video.</p><a href="https://wa.me/573022469542" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>';
+            container.appendChild(error);
         }
 
         poster.addEventListener('click', playVideo);
@@ -209,22 +250,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ============================================
-    // WhatsApp Button Tracking
+    // WhatsApp CTA - Toast de confirmación
     // ============================================
-    const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
-    
-    whatsappButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            // Track click (can be connected to analytics)
-            console.log('WhatsApp clicked:', this.href);
-            
-            // Add click effect
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
+    const toast = document.getElementById('waToast');
+    let toastTimer;
+
+    if (toast) {
+        document.querySelectorAll('a[href*="wa.me"]').forEach(button => {
+            button.addEventListener('click', function() {
+                toast.classList.add('visible');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => toast.classList.remove('visible'), 3000);
+            });
         });
-    });
+    }
     
     // ============================================
     // Service Card Interactions
@@ -249,28 +288,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // window.innerWidth > 768 evita que el parallax rompa la vista móvil
     if (heroSection && window.innerWidth > 768 && !window.matchMedia('(pointer: coarse)').matches) {
+        let parallaxTicking = false;
+
         window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * 0.3;
-            
-            if (heroContent && scrolled < window.innerHeight) {
-                heroContent.style.transform = `translateY(${rate}px)`;
-                heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
-            }
+            if (parallaxTicking) return;
+            parallaxTicking = true;
+
+            requestAnimationFrame(function() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * 0.3;
+
+                if (heroContent && scrolled < window.innerHeight) {
+                    heroContent.style.transform = `translateY(${rate}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+                }
+
+                parallaxTicking = false;
+            });
         });
     }
-    
-    // ============================================
-    // Form Placeholder (if forms are added later)
-    // ============================================
-    const forms = document.querySelectorAll('form');
-    
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Próximamente: Formulario de contacto. Por favor usa WhatsApp para cotizar ahora.');
-        });
-    });
     
     // ============================================
     // Performance: Lazy Load Images
@@ -293,69 +329,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ============================================
-    // Counter Animation for Stats
-    // ============================================
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
-    const animateCounter = (element, target, suffix = '') => {
-        const duration = 2000;
-        const start = 0;
-        const increment = target / (duration / 16);
-        let current = start;
-        
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                element.textContent = Math.floor(current) + suffix;
-                requestAnimationFrame(updateCounter);
-            } else {
-                element.textContent = target + suffix;
-            }
-        };
-        
-        updateCounter();
-    };
-    
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const statNumber = entry.target;
-                const text = statNumber.textContent;
-                
-                if (text.includes('500')) {
-                    animateCounter(statNumber, 500, '+');
-                } else if (text.includes('5')) {
-                    statNumber.textContent = '5';
-                } else if (text.includes('24')) {
-                    statNumber.textContent = '24h';
-                }
-                
-                statsObserver.unobserve(statNumber);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    statNumbers.forEach(stat => statsObserver.observe(stat));
-    
-    // ============================================
-    // Before/After Slider (Simple Version)
-    // ============================================
-    const resultCards = document.querySelectorAll('.result-card');
-    
-    resultCards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Simple toggle effect for mobile
-            const before = this.querySelector('.result-before');
-            const after = this.querySelector('.result-after');
-            
-            if (window.innerWidth < 768 && before && after) {
-                before.style.opacity = before.style.opacity === '0' ? '1' : '0';
-                after.style.opacity = after.style.opacity === '1' ? '0' : '1';
-            }
-        });
-    });
-    
-    // ============================================
     // Button Click Effects
     // ============================================
     const allButtons = document.querySelectorAll('.btn-primary, .btn-service, .btn-cta-large');
@@ -374,58 +347,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // ============================================
-    // Preloader (Optional)
-    // ============================================
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-    });
-    
-    // ============================================
-    // Console Message
-    // ============================================
-    console.log('%c CarFilms Estética Vehicular ', 'background: linear-gradient(135deg, #d4af37 0%, #e5c76b 100%); color: #000; font-size: 20px; font-weight: bold; padding: 10px 20px; border-radius: 10px;');
-    console.log('%c Protección premium para tu vehículo en Medellín ', 'color: #d4af37; font-size: 14px;');
 });
-
-// ============================================
-// Utility Functions
-// ============================================
-
-// Throttle function for scroll events
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
-// Debounce function for resize events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Check if element is in viewport
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
