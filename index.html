@@ -13,6 +13,7 @@
     <link rel="icon" href="data:,">
 </head>
 <body>
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></symbol>
     </svg>
@@ -22,7 +23,7 @@
             <div class="logo-section">
                 <img src="logo.jpg" alt="CarFilms Estética Vehicular" class="logo-img">
                 <div class="logo-text">
-                    <h1 class="logo-title">CarFilms</h1>
+                    <p class="logo-title">CarFilms</p>
                     <p class="logo-subtitle">Estética Vehicular Premium</p>
                 </div>
             </div>
@@ -31,12 +32,12 @@
                 <a href="#beneficios" class="nav-link">Beneficios</a>
                 <a href="#servicios" class="nav-link">Servicios</a>
                 <a href="#testimonios" class="nav-link">Testimonios</a>
-                <a href="https://wa.me/573022469542" class="btn-nav-whatsapp" target="_blank">
+                <a href="https://wa.me/573022469542" class="btn-nav-whatsapp" target="_blank" rel="noopener noreferrer">
                     <svg class="icon-whatsapp" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
                     Cotizar
                 </a>
             </nav>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -45,17 +46,18 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
         <a href="#resultados" class="mobile-nav-link">Resultados</a>
         <a href="#beneficios" class="mobile-nav-link">Beneficios</a>
         <a href="#servicios" class="mobile-nav-link">Servicios</a>
         <a href="#testimonios" class="mobile-nav-link">Testimonios</a>
-        <a href="https://wa.me/573022469542" class="btn-whatsapp-mobile" target="_blank">
+        <a href="https://wa.me/573022469542" class="btn-whatsapp-mobile" target="_blank" rel="noopener noreferrer">
             <svg class="icon-whatsapp" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
             Cotizar Ahora
         </a>
-    </div>
+    </nav>
 
+    <main id="contenido-principal">
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-video-container">
@@ -69,16 +71,16 @@
                 <span class="badge-star">★★★★★</span>
                 <span class="badge-text">+500 vehículos protegidos en Medellín · Especialistas en PPF</span>
             </div>
-            <h2 class="hero-title">
+            <h1 class="hero-title">
                 PPF completo para tu carro<br>
                 <span class="title-gold">en Medellín</span>
-            </h2>
+            </h1>
             <p class="hero-subtitle">
                 Protege la pintura de tu carro frente a impactos de piedras y marcas leves de lavado.<br>
                 Instalamos PPF brillante o mate y revisamos el acabado a los 15 días.
             </p>
             <div class="hero-cta">
-                <a href="https://wa.me/573022469542?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20CARFILMS%20y%20quiero%20cotizar%20PPF%20completo.%20Mi%20carro%20es%20marca%20___%2C%20modelo%20___%2C%20a%C3%B1o%20___.%20Me%20interesa%20el%20acabado%20brillante%20o%20mate" class="btn-hero-whatsapp" target="_blank">
+                <a href="https://wa.me/573022469542?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20CARFILMS%20y%20quiero%20cotizar%20PPF%20completo.%20Mi%20carro%20es%20marca%20___%2C%20modelo%20___%2C%20a%C3%B1o%20___.%20Me%20interesa%20el%20acabado%20brillante%20o%20mate" class="btn-hero-whatsapp" target="_blank" rel="noopener noreferrer">
                     <svg class="icon-whatsapp" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
                     Cotizar PPF completo
                 </a>
@@ -86,21 +88,21 @@
             </div>
             <div class="hero-trust">
                 <div class="trust-item">
-                    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                         <path d="M9 12l2 2 4-4"/>
                     </svg>
                     <span>Garantía 10 años</span>
                 </div>
                 <div class="trust-item">
-                    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"/>
                         <path d="M12 6v6l4 2"/>
                     </svg>
                     <span>Entrega 2 días</span>
                 </div>
                 <div class="trust-item">
-                    <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
                         <path d="M14 2v6h6"/>
                         <path d="M9 15l2 2 4-4"/>
@@ -132,7 +134,7 @@
                         </video>
                     </div>
                     <div class="result-info">
-                        <h4 class="result-title">Sin Protección</h4>
+                        <h3 class="result-title">Sin Protección</h3>
                         <p class="result-car">Pintura expuesta a rayones y desgaste</p>
                     </div>
                 </div>
@@ -148,13 +150,13 @@
                         </video>
                     </div>
                     <div class="result-info">
-                        <h4 class="result-title">Con PPF Premium</h4>
+                        <h3 class="result-title">Con PPF Premium</h3>
                         <p class="result-car">Brillo espejo, protección total</p>
                     </div>
                 </div>
             </div>
             <div class="results-cta">
-                <a href="https://wa.me/573022469542?text=Hola,%20vi%20los%20resultados%20y%20quiero%20cotizar" class="btn-results" target="_blank">
+                <a href="https://wa.me/573022469542?text=Hola,%20vi%20los%20resultados%20y%20quiero%20cotizar" class="btn-results" target="_blank" rel="noopener noreferrer">
                     <svg class="icon-whatsapp" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
                     Quiero que mi carro luzca así
                 </a>
@@ -173,7 +175,7 @@
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                             <path d="M2 17l10 5 10-5"/>
                             <path d="M2 12l10 5 10-5"/>
@@ -184,7 +186,7 @@
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="12" cy="12" r="5"/>
                             <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
                         </svg>
@@ -194,7 +196,7 @@
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                         </svg>
                     </div>
@@ -203,7 +205,7 @@
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
                         </svg>
                     </div>
@@ -225,7 +227,7 @@
             <div class="services-grid">
                 <div class="card service-card">
                     <div class="service-placeholder-svg">
-                        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg aria-hidden="true" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                             <path d="M2 17l10 5 10-5"/>
                             <path d="M2 12l10 5 10-5"/>
@@ -246,7 +248,7 @@
                             <li>Garantía 10 años</li>
                             <li>Entrega en 2 días</li>
                         </ul>
-                        <a href="https://wa.me/573022469542?text=Hola,%20quiero%20cotizar%20PPF%20por%20zonas" class="btn-service" target="_blank">
+                        <a href="https://wa.me/573022469542?text=Hola,%20quiero%20cotizar%20PPF%20por%20zonas" class="btn-service" target="_blank" rel="noopener noreferrer">
                             Cotizar PPF por Zonas
                         </a>
                         
@@ -255,7 +257,7 @@
                 </div>
                 <div class="card service-card">
                     <div class="service-placeholder-svg service-placeholder-heat">
-                        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg aria-hidden="true" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="60" cy="60" r="35"/>
                             <path d="M60 25v10M60 85v10M25 60h10M85 60h10"/>
                             <path d="M36 36l7 7M77 77l7 7M36 84l7-7M77 43l7-7"/>
@@ -275,14 +277,14 @@
                             <li>Visibilidad clara de noche, sin distorsión</li>
                             <li>Entrega en 3 horas</li>
                         </ul>
-                        <a href="https://wa.me/573022469542?text=Hola,%20quiero%20cotizar%20Polarizado" class="btn-service" target="_blank">
+                        <a href="https://wa.me/573022469542?text=Hola,%20quiero%20cotizar%20Polarizado" class="btn-service" target="_blank" rel="noopener noreferrer">
                             Cotizar Polarizado
                         </a>
                     </div>
                 </div>
                 <div class="card service-card">
                     <div class="service-placeholder-svg service-placeholder-wrap">
-                        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg aria-hidden="true" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="20" y="30" width="80" height="60" rx="5"/>
                             <path d="M30 30V20a5 5 0 0110 0v10M80 30V20a5 5 0 0110 0v10"/>
                             <path d="M35 50h50M35 65h50M35 80h30"/>
@@ -302,14 +304,14 @@
                             <li>Removible sin dañar pintura original</li>
                             <li>Entrega en 3 días</li>
                         </ul>
-                        <a href="https://wa.me/573022469542?text=Hola,%20quiero%20cotizar%20Wrap" class="btn-service" target="_blank">
+                        <a href="https://wa.me/573022469542?text=Hola,%20quiero%20cotizar%20Wrap" class="btn-service" target="_blank" rel="noopener noreferrer">
                             Cotizar Wrap
                         </a>
                     </div>
                 </div>
                 <div class="card service-card">
                     <div class="service-placeholder-svg service-placeholder-shine">
-                        <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <svg aria-hidden="true" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="60" cy="60" r="40"/>
                             <path d="M60 20v8M60 92v8M20 60h8M92 60h8"/>
                             <path d="M32 32l5.5 5.5M82.5 82.5L88 88M32 88l5.5-5.5M82.5 32L88 26"/>
@@ -329,7 +331,7 @@
                             <li>Protección cerámica SIO2 incluida</li>
                             <li>Entrega en 2 días</li>
                         </ul>
-                        <a href="https://wa.me/573022469542?text=Hola,%20quiero%20cotizar%20Detailing" class="btn-service" target="_blank">
+                        <a href="https://wa.me/573022469542?text=Hola,%20quiero%20cotizar%20Detailing" class="btn-service" target="_blank" rel="noopener noreferrer">
                             Cotizar Detailing
                         </a>
                     </div>
@@ -354,7 +356,7 @@
                         </video>
                     </div>
                     <div class="result-info">
-                        <h4 class="result-title">Pintura Opaca y Marcada</h4>
+                        <h3 class="result-title">Pintura Opaca y Marcada</h3>
                         <p class="result-car">Swirls de lavados incorrectos</p>
                     </div>
                 </div>
@@ -370,7 +372,7 @@
                         </video>
                     </div>
                     <div class="result-info">
-                        <h4 class="result-title">Con Detailing + Polarizado</h4>
+                        <h3 class="result-title">Con Detailing + Polarizado</h3>
                         <p class="result-car">Brillo de agencia restaurado</p>
                     </div>
                 </div>
@@ -393,7 +395,7 @@
                     <div class="testimonial-author">
                         <div class="author-avatar">JM</div>
                         <div class="author-info">
-                            <h4 class="author-name">Juan David Martínez</h4>
+                            <h3 class="author-name">Juan David Martínez</h3>
                             <p class="author-car">BMW X5 - Detailing Premium</p>
                         </div>
                     </div>
@@ -404,7 +406,7 @@
                     <div class="testimonial-author">
                         <div class="author-avatar">CL</div>
                         <div class="author-info">
-                            <h4 class="author-name">Carlos Eduardo López</h4>
+                            <h3 class="author-name">Carlos Eduardo López</h3>
                             <p class="author-car">Audi Q7 - PPF Premium</p>
                         </div>
                     </div>
@@ -415,14 +417,14 @@
                     <div class="testimonial-author">
                         <div class="author-avatar">SR</div>
                         <div class="author-info">
-                            <h4 class="author-name">Sebastián Restrepo</h4>
+                            <h3 class="author-name">Sebastián Restrepo</h3>
                             <p class="author-car">Mercedes C-Class - Wrap Negro Mate</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="testimonials-cta">
-                <a href="https://wa.me/573022469542?text=Hola,%20vi%20los%20testimonios%20y%20quiero%20agendar" class="btn-testimonials" target="_blank">
+                <a href="https://wa.me/573022469542?text=Hola,%20vi%20los%20testimonios%20y%20quiero%20agendar" class="btn-testimonials" target="_blank" rel="noopener noreferrer">
                     <svg class="icon-whatsapp" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
                     Quiero ser el próximo testimonio
                 </a>
@@ -460,49 +462,49 @@
                     <div class="trust-features-list">
                         <div class="trust-feature-item">
                             <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                                     <path d="M9 12l2 2 4-4"/>
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h4>PPF 8 Mils de Espesor</h4>
+                                <h3>PPF 8 Mils de Espesor</h3>
                                 <p>Película de poliuretano alifático, no TPU genérico. Espesor real que detona gravel y marcas de lavado.</p>
                             </div>
                         </div>
                         <div class="trust-feature-item">
                             <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                                     <path d="M9 12l2 2 4-4"/>
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h4>Técnicos Especializados en PPF</h4>
+                                <h3>Técnicos Especializados en PPF</h3>
                                 <p>Certificación XPEL y 3M. Sabemos cortar patrones complejos, no improvisamos con cuchillo en la pintura.</p>
                             </div>
                         </div>
                         <div class="trust-feature-item">
                             <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                                     <path d="M9 12l2 2 4-4"/>
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h4>Garantía Escrita</h4>
+                                <h3>Garantía Escrita</h3>
                                 <p>Todo trabajo incluye garantía real. Si algo falla, lo arreglamos sin costo.</p>
                             </div>
                         </div>
                         <div class="trust-feature-item">
                             <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                                     <path d="M9 12l2 2 4-4"/>
                                 </svg>
                             </div>
                             <div class="feature-text">
-                                <h4>Taller en Medellín</h4>
+                                <h3>Taller en Medellín</h3>
                                 <p>Ubicación real, horario real, teléfono real. Puedes venir a ver el taller antes de decidir.</p>
                             </div>
                         </div>
@@ -524,12 +526,12 @@
                     Más de 500 vehículos en Medellín ya tienen PPF de CarFilms. Únete a ellos y olvídate de los rayones en la pintura.
                 </p>
                 <div class="final-cta-buttons">
-                    <a href="https://wa.me/573022469542" class="btn-final-whatsapp" target="_blank">
+                    <a href="https://wa.me/573022469542" class="btn-final-whatsapp" target="_blank" rel="noopener noreferrer">
                         <svg class="icon-whatsapp" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
                         Escribir por WhatsApp Ahora
                     </a>
-                    <a href="https://maps.app.goo.gl/Lqcez9Mh9U85eEkH6" class="btn-testimonials" style="margin-top: 1rem; display: inline-flex;" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; margin-right: 8px;">
+                    <a href="https://maps.app.goo.gl/Lqcez9Mh9U85eEkH6" class="btn-testimonials" style="margin-top: 1rem; display: inline-flex;" target="_blank" rel="noopener noreferrer">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px; margin-right: 8px;">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
@@ -538,21 +540,21 @@
                 </div>
                 <div class="final-cta-info">
                     <div class="final-cta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                         <span>Cra. 71 #30-11, Belén, Medellín</span>
                     </div>
                     <div class="final-cta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M12 6v6l4 2"/>
                         </svg>
                         <span>Lun 8AM-6PM · Mar-Jue 8AM-9PM · Sáb 8AM-9PM</span>
                     </div>
                     <div class="final-cta-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
                         </svg>
                         <span>Respuesta en 10 minutos</span>
@@ -561,6 +563,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -570,20 +573,20 @@
                     <img src="logo.jpg" alt="CarFilms" class="footer-logo" loading="lazy" decoding="async">
                     <p class="footer-tagline">Especialistas en PPF y protección de pintura en Medellín</p>
                     <div class="footer-social">
-                        <a href="https://www.instagram.com/ppf_nano_polarizados/" class="social-link" aria-label="Instagram" target="_blank">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://www.instagram.com/ppf_nano_polarizados/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
                         </a>
-                        <a href="https://www.facebook.com/403772080418525?ref=NONE_xav_ig_profile_page_web" class="social-link" aria-label="Facebook" target="_blank">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://www.facebook.com/403772080418525?ref=NONE_xav_ig_profile_page_web" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-title">Servicios</h4>
+                    <h3 class="footer-title">Servicios</h3>
                     <ul>
                         <li><a href="#servicios">PPF Premium</a></li>
                         <li><a href="#servicios">Polarizado</a></li>
@@ -592,7 +595,7 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-title">Enlaces</h4>
+                    <h3 class="footer-title">Enlaces</h3>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
@@ -602,10 +605,10 @@
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h4 class="footer-title">Contacto</h4>
+                    <h3 class="footer-title">Contacto</h3>
                     <p>Cra. 71 #30-11, Belén, Medellín</p>
                     <p>Lun 8AM-6PM · Mar-Jue 8AM-9PM · Sáb 8AM-9PM</p>
-                    <a href="https://wa.me/573022469542" class="footer-whatsapp" target="_blank">
+                    <a href="https://wa.me/573022469542" class="footer-whatsapp" target="_blank" rel="noopener noreferrer">
                         <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
                         WhatsApp
                     </a>
@@ -618,7 +621,7 @@
     </footer>
 
     <!-- Fixed WhatsApp Button -->
-    <a href="https://wa.me/573022469542" class="whatsapp-fixed" target="_blank" aria-label="Cotizar por WhatsApp">
+    <a href="https://wa.me/573022469542" class="whatsapp-fixed" target="_blank" rel="noopener noreferrer" aria-label="Cotizar por WhatsApp">
         <div class="whatsapp-pulse"></div>
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
         <span class="whatsapp-tooltip">¡Cotiza Ahora!</span>

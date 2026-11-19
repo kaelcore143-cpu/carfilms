@@ -190,7 +190,7 @@ button {
     align-items: center;
     gap: 0.5rem;
     padding: 0.6rem 1.2rem;
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, #075E54 0%, #128c7e 100%);
     color: var(--color-white);
     border-radius: var(--radius-full);
     font-weight: 600;
@@ -276,7 +276,7 @@ button {
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, #075E54 0%, #128c7e 100%);
     color: var(--color-white);
     border-radius: var(--radius-full);
     font-weight: 700;
@@ -394,7 +394,7 @@ button {
     align-items: center;
     gap: 0.75rem;
     padding: 1.2rem 2.5rem;
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, #075E54 0%, #128c7e 100%);
     color: var(--color-white);
     font-weight: 700;
     font-size: 1rem;
@@ -940,7 +940,7 @@ button {
     color: var(--color-gold);
 }
 
-.feature-text h4 {
+.feature-text h3 {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--color-white);
@@ -1042,7 +1042,7 @@ button {
     justify-content: center;
     gap: 0.75rem;
     padding: 1.5rem 3rem;
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, #075E54 0%, #128c7e 100%);
     color: var(--color-white);
     font-weight: 700;
     font-size: 1.1rem;
@@ -1184,7 +1184,7 @@ button {
 
 .footer-bottom p {
     font-size: 0.85rem;
-    color: var(--color-silver-dark);
+    color: var(--color-silver);
 }
 
 /* ============================================
@@ -1196,7 +1196,7 @@ button {
     right: max(var(--spacing-md), env(safe-area-inset-right));
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, #075E54 0%, #128c7e 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1437,7 +1437,7 @@ button {
     justify-content: center;
     gap: 0.75rem;
     padding: 1.5rem 3rem;
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, #075E54 0%, #128c7e 100%);
     color: var(--color-white);
     font-weight: 700;
     font-size: 1.1rem;
@@ -1505,7 +1505,7 @@ button {
     align-items: center;
     gap: 0.75rem;
     padding: 1.2rem 2.5rem;
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, #075E54 0%, #128c7e 100%);
     color: var(--color-white);
     font-weight: 700;
     font-size: 1rem;
@@ -1594,7 +1594,7 @@ button {
     justify-content: center;
     gap: 0.75rem;
     padding: 1.5rem 3.5rem;
-    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    background: linear-gradient(135deg, #075E54 0%, #128c7e 100%);
     color: var(--color-white);
     font-weight: 700;
     font-size: 1.2rem;
@@ -1933,4 +1933,32 @@ button {
         animation: none;
         background: var(--color-black);
     }
+}
+
+/* ============================================
+   ACCESIBILIDAD - Foco y skip link
+   ============================================ */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-gold);
+    color: var(--color-black);
+    font-weight: 700;
+    text-decoration: none;
+    z-index: 2000;
+    border-radius: 0 0 var(--radius-sm) 0;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
 }

@@ -10,12 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.getElementById('mobileMenu');
     
     if (mobileMenuBtn && mobileMenu) {
+        const setMenuState = function(expanded) {
+            mobileMenuBtn.setAttribute('aria-expanded', String(expanded));
+            mobileMenuBtn.setAttribute('aria-label', expanded ? 'Cerrar menú' : 'Abrir menú');
+        };
+
         mobileMenuBtn.addEventListener('click', function() {
             this.classList.toggle('active');
             mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            const expanded = mobileMenu.classList.contains('active');
+            document.body.style.overflow = expanded ? 'hidden' : '';
+            setMenuState(expanded);
         });
-        
+
         // Close menu when clicking a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
@@ -23,7 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileMenuBtn.classList.remove('active');
                 mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
+                setMenuState(false);
             });
+        });
+
+        // Close menu with Escape and return focus to the button
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                setMenuState(false);
+                mobileMenuBtn.focus();
+            }
         });
     }
     
