@@ -13,8 +13,8 @@ Este archivo brinda orientación compacta y específica del reposo para futuras 
 
 ## Videos
 - Deben ser formato MP4, cada uno con menos de 25 MB.
-- Usar nombres de archivo sin ruta (ej. `6157781-hd_1920_1080_30fps.mp4`) — todos los videos viven en la raíz.
-- Video hero: autoplay, muted, loop. Otros videos usan reproducción bajo clic (lazy loading) con Intersection Observer en `script.js`.
+- Usar nombres de archivo sin ruta (ej. `15448797-hd_1920_1080_60fps.mp4`) - todos los videos viven en la raíz.
+- Video hero: autoplay, muted, loop. Hoy es el único video de la página; si se agregan videos de resultados, usar reproducción bajo clic (lazy loading).
 
 ## Paleta de colores (variables CSS en `style.css`)
 - `--color-black: #0a0a0a` (fondo principal)
@@ -53,7 +53,7 @@ Este archivo brinda orientación compacta y específica del reposo para futuras 
 - Meta descripción y viewport están en `<head>` de `index.html`.
 
 ## Quirks de rendimiento
-- Videos lazy-load mediante Intersection Observer — clic en el poster para reproducir, clic fuera para detener.
+- Videos lazy-load mediante Intersection Observer — clic en el poster para reproducir, clic fuera para detener (aplicable si se agregan videos de resultados; hoy solo existe el video hero).
 - `preload="none"` en videos lazy; `preload="metadata"` si se quiere vista previa.
 - `IntersectionObserver` usado para animaciones fade-in-up, contadores de estadísticas y carga de videos.
 - `prefers-reduced-motion` reduce/elimina animaciones.

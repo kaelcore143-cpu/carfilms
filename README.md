@@ -16,8 +16,8 @@ HTML/CSS/JS vanilla, sin build ni frameworks. Alojado en **GitHub Pages** (rama 
 ├── script.js         # Interactividad (lazy videos, menú móvil, toast)
 ├── logo.jpg          # Logo + favicon
 ├── carfilms-logo.jpg # Logo (og:image)
-├── *.mp4             # Videos del taller (hero + antes/después)
-├── pexels-*.jpg      # Posters de video
+├── *.mp4             # Video del hero
+├── trabajo-*.jpg     # Fotos reales de trabajos (resultados y galería)
 ├── sitemap.xml       # Mapa del sitio (1 URL)
 ├── robots.txt        # Reglas de rastreo + sitemap
 └── CNAME             # Dominio personalizado de GitHub Pages
