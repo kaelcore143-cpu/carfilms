@@ -1,19 +1,5 @@
 User-agent: *
 Allow: /
 
-# Prioridad para archivos importantes
-Allow: /assets/
-Allow: /style.css
-Allow: /script.js
-Allow: /index.html
-
-# Bloquear archivos innecesarios
-Disallow: /.htaccess
-Disallow: /README.md
-Disallow: /*.md$
-
 # Sitemap
-Sitemap: https://carfilms.com.co/sitemap.xml
-
-# Crawl delay para no sobrecargar el servidor
-Crawl-delay: 1
+Sitemap: https://steticavehicularcarfilms.com/sitemap.xml

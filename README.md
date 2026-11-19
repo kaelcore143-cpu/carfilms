@@ -1,148 +1,48 @@
-# Carfilms Estética Vehicular
+# CarFilms Estética Vehicular
 
-Sitio web optimizado para Carfilms Estética Vehicular - Especialistas en polarizado, cerámico, detailing y vinilado de vehículos en Medellín.
+Sitio web de **CarFilms Estética Vehicular** — especialistas en PPF (Paint Protection Film), polarizado cerámico y detailing profesional en Medellín.
 
-## 🚀 Características
+🌐 **En vivo:** https://steticavehicularcarfilms.com/
 
-- **Optimización de rendimiento**: Videos con lazy loading y control de reproducción
-- **Mobile-first**: Diseño responsivo optimizado para móviles
-- **SEO optimizado**: Meta tags, structured data y sitemap
-- **Seguridad**: Headers de seguridad y validaciones
-- **Accesibilidad**: ARIA labels y semántica HTML5
+## Stack
 
-## 📁 Estructura del Proyecto
+HTML/CSS/JS vanilla, sin build ni frameworks. Alojado en **GitHub Pages** (rama `main`, raíz `/`).
+
+## Estructura
 
 ```
-carfilms.com/
-├── index.html          # Página principal
-├── style.css           # Estilos optimizados
-├── script.js           # JavaScript con optimizaciones
-├── assets/             # Recursos estáticos
-│   ├── videos/         # Videos de background
-│   └── img/           # Imágenes
-├── .htaccess          # Configuración de servidor
-├── robots.txt         # Directivas para crawlers
-├── sitemap.xml        # Mapa del sitio
-└── README.md          # Este archivo
+├── index.html        # Única página (sitio one-page)
+├── style.css         # Estilos + design tokens (variables CSS en :root)
+├── script.js         # Interactividad (lazy videos, menú móvil, toast)
+├── logo.jpg          # Logo + favicon
+├── carfilms-logo.jpg # Logo (og:image)
+├── *.mp4             # Videos del taller (hero + antes/después)
+├── pexels-*.jpg      # Posters de video
+├── sitemap.xml       # Mapa del sitio (1 URL)
+├── robots.txt        # Reglas de rastreo + sitemap
+└── CNAME             # Dominio personalizado de GitHub Pages
 ```
 
-## 🌐 Despliegue en GitHub Pages
+Parciales descartados: el sitio es one-page; no hay carpetas `assets/` — todo vive en la raíz.
 
-### Método 1: Desde rama main/master
+## Desarrollo local
 
-1. Sube todos los archivos a tu repositorio GitHub
-2. Ve a **Settings** > **Pages**
-3. En **Source**, selecciona **Deploy from a branch**
-4. Elige la rama **main** (o master) y carpeta **/(root)**
-5. Haz clic en **Save**
+Abre `index.html` en el navegador (doble clic). No requiere servidor ni dependencias.
 
-### Método 2: Desde GitHub Actions
+## Despliegue
 
-Crea el archivo `.github/workflows/deploy.yml`:
+GitHub Pages publica automáticamente desde `main` / raíz. Cada push a `main` reconstruye el sitio.
 
-```yaml
-name: Deploy to GitHub Pages
+Checklist antes de subir:
+- `git push origin main`
+- Verificar https://steticavehicularcarfilms.com/ carga tras el rebuild (1-2 min)
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+## Contacto
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+- **Dirección:** Cra. 71 #30-11, Belén, Medellín
+- **WhatsApp:** [+57 302 246 9542](https://wa.me/573022469542)
+- **Horario:** Lun 8AM-6PM · Mar-Jue 8AM-9PM · Sáb 8AM-9PM
+- **Instagram:** [@ppf_nano_polarizados](https://www.instagram.com/ppf_nano_polarizados/)
+- **Facebook:** [ppf_nano_polarizados](https://www.facebook.com/403772080418525)
 
-    steps:
-    - uses: actions/checkout@v3
-    
-    - name: Setup Pages
-      uses: actions/configure-pages@v3
-      
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
-      with:
-        path: '.'
-        
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v2
-```
-
-## 🔧 Configuración de Dominio Personalizado
-
-1. Ve a **Settings** > **Pages** > **Custom domain**
-2. Ingresa: `carfilms.com.co`
-3. Configura estos registros DNS:
-
-```
-Tipo A: @ -> 185.199.108.153
-Tipo A: @ -> 185.199.109.153
-Tipo A: @ -> 185.199.110.153
-Tipo A: @ -> 185.199.111.153
-CNAME: www -> carfilms-com-co.github.io
-```
-
-## 🛡️ Seguridad Implementada
-
-- **Content Security Policy**: Previene XSS y ataques de inyección
-- **Headers de seguridad**: X-Frame-Options, X-Content-Type-Options
-- **HTTPS forzado**: Redirección automática a HTTPS
-- **Validación de dominio**: Protección contra hotlinking
-
-## 📈 SEO Optimizado
-
-- **Meta tags completos**: Title, description, keywords
-- **Open Graph**: Para compartir en redes sociales
-- **Twitter Cards**: Optimizado para Twitter
-- **Structured Data**: Schema.org para motores de búsqueda
-- **Sitemap.xml**: Mapa del sitio para crawlers
-- **Robots.txt**: Directivas para indexación
-
-## ⚡ Optimización de Rendimiento
-
-- **Lazy loading**: Videos solo cuando son visibles
-- **Intersection Observer**: Control eficiente de recursos
-- **RequestAnimationFrame**: Animaciones optimizadas
-- **Memory management**: Limpieza de recursos
-- **Performance monitoring**: Detección automática de bajo rendimiento
-
-## 📱 Mobile Optimizations
-
-- **Mobile-first CSS**: Prioridad a dispositivos móviles
-- **Touch-friendly**: Botones y navegación optimizados
-- **Reduced animations**: Menor consumo de batería
-- **Optimized videos**: Playback rate reducido en móvil
-
-## 🐛 Solución de Problemas Comunes
-
-### Videos no se reproducen en GitHub Pages
-- Los videos deben estar en formato MP4
-- Asegúrate que los archivos no excedan 25MB
-- Verifica que las rutas sean relativas: `assets/videos/video.mp4`
-
-### Problemas de seguridad
-- GitHub Pages no soporta `.htaccess`
-- Los headers de seguridad se implementan via meta tags
-- HTTPS es automático en GitHub Pages
-
-### SEO no funciona
-- Verifica el sitemap.xml en `https://username.github.io/sitemap.xml`
-- Confirma el robots.txt en `https://username.github.io/robots.txt`
-- Usa Google Search Console para verificar indexación
-
-## 📞 Contacto
-
-- **Teléfono**: +57 302 246 9542
-- **WhatsApp**: https://wa.me/573022469542
-- **Dirección**: Carrera 70 #30a-156, Belén Rosales, Medellín
-- **Facebook**: https://www.facebook.com/403772080418525?ref=NONE_xav_ig_profile_page_web
-- **Instagram**: https://www.instagram.com/ppf_nano_polarizados/
-
-## 📄 Licencia
-
-Este proyecto es propiedad de Carfilms Estética Vehicular 
+© 2026 CarFilms Estética Vehicular.
