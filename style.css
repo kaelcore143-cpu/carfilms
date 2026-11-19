@@ -2040,3 +2040,68 @@ button:focus-visible,
     opacity: 1;
     transform: translate(-50%, 0);
 }
+
+/* ============================================
+   MARCAS QUE INSTALAMOS
+   ============================================ */
+.brands {
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+    background: var(--color-black);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.brands-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.brands-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.brands-subtitle {
+    color: var(--color-silver);
+    font-size: 1rem;
+    margin-top: var(--spacing-xs);
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.brand-wordmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem 0.5rem;
+    background: var(--color-black-lighter);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: var(--radius-md);
+    color: var(--color-silver-light);
+    font-weight: 800;
+    font-size: clamp(0.65rem, 1.3vw, 0.95rem);
+    letter-spacing: 2px;
+    line-height: 1.4;
+    white-space: nowrap;
+    transition: var(--transition-medium);
+}
+
+.brand-wordmark:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
