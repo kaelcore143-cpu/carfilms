@@ -18,7 +18,7 @@ HTML/CSS/JS vanilla, sin build ni frameworks. Alojado en **GitHub Pages** (rama 
 ├── carfilms-logo.jpg # Logo (og:image)
 ├── *.mp4             # Video del hero
 ├── trabajo-*.jpg     # Fotos reales de trabajos (resultados y galería)
-├── logo-*.svg|png    # Logos de marcas (Avery Dennison, 3M, XPEL, SunTek, Hexis, StarkPro)
+├── logo-*.svg|png    # Logos de marcas (Avery Dennison y StarkPro)
 ├── sitemap.xml       # Mapa del sitio (1 URL)
 ├── robots.txt        # Reglas de rastreo + sitemap
 └── CNAME             # Dominio personalizado de GitHub Pages

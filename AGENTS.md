@@ -5,7 +5,8 @@ Este archivo brinda orientación compacta y específica del reposo para futuras 
 ## Ubicación de archivos
 - **Todos los archivos van en la raíz** — sin carpetas `assets/`, `img/` o `videos/`. El proyecto declara explícitamente "TODO en la RAÍZ".
 - Archivos clave: `index.html`, `style.css`, `script.js`, `logo.jpg`, más los archivos de video MP4 y las fotos `trabajo-*.jpg`.
-- Logos de marcas en la raíz como `logo-avery-dennison.svg`, `logo-3m.svg`, `logo-xpel.svg`, `logo-suntek.svg`, `logo-hexis.svg` y `logo-starkpro.png`. La sección `#marcas` los muestra como imágenes (no como texto); Avery y SunTek se invierten a blanco con CSS por su tinta oscura.
+- Solo se muestran dos marcas (Avery Dennison y StarkPro), con logos en la raíz: `logo-avery-dennison.svg` y `logo-starkpro.png`. La sección `#marcas` los muestra como imágenes (no como texto); Avery se invierte a blanco con CSS por su tinta oscura.
+- Cada foto `trabajo-*.jpg` se usa **una sola vez** en todo el sitio (resultados, servicios y galería). No repetir una imagen en dos secciones.
 
 ## Despliegue en GitHub Pages
 - Dos métodos: (1) carga manual de todos los archivos a la rama `main` raíz, o (2) GitHub Actions (verificar si existe `.github/workflows/deploy.yml`).
