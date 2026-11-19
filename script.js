@@ -213,12 +213,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ============================================
-    // Parallax Effect for Hero
+    // Parallax Effect for Hero (AHORA BLOQUEADO EN MÓVIL)
     // ============================================
     const heroSection = document.querySelector('.hero');
     const heroContent = document.querySelector('.hero-content');
     
-    if (heroSection && !window.matchMedia('(pointer: coarse)').matches) {
+    // window.innerWidth > 768 evita que el parallax rompa la vista móvil
+    if (heroSection && window.innerWidth > 768 && !window.matchMedia('(pointer: coarse)').matches) {
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
             const rate = scrolled * 0.3;
@@ -318,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const before = this.querySelector('.result-before');
             const after = this.querySelector('.result-after');
             
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 768 && before && after) {
                 before.style.opacity = before.style.opacity === '0' ? '1' : '0';
                 after.style.opacity = after.style.opacity === '1' ? '0' : '1';
             }
