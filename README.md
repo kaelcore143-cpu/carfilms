@@ -17,6 +17,7 @@ HTML/CSS/JS vanilla, sin build ni frameworks. Alojado en **GitHub Pages** (rama 
 ├── logo.jpg          # Logo del header y apple-touch-icon
 ├── logo-busqueda.svg # Favicon SVG (aparece en resultados de búsqueda)
 ├── favicon-192.png   # Favicon PNG 192x192 (respaldo)
+├── favicon.ico       # Favicon ICO 16/32/48 (navegadores classicos)
 ├── carfilms-logo.jpg # Logo (og:image)
 ├── *.mp4             # Video del hero
 ├── trabajo-*.jpg     # Fotos reales de trabajos (resultados y galería)
