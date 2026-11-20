@@ -5,6 +5,7 @@ Este archivo brinda orientación compacta y específica del reposo para futuras 
 ## Ubicación de archivos
 - **Todos los archivos van en la raíz** — sin carpetas `assets/`, `img/` o `videos/`. El proyecto declara explícitamente "TODO en la RAÍZ".
 - Archivos clave: `index.html`, `style.css`, `script.js`, `logo.jpg`, más los archivos de video MP4 y las fotos `trabajo-*.jpg`.
+- Favicon: `logo-busqueda.svg` (SVG, para resultados de búsqueda) con respaldo `favicon-192.png`; `logo.jpg` se usa como `apple-touch-icon`.
 - Solo se muestran dos marcas (Avery Dennison y StarkPro), con logos en la raíz: `logo-avery-dennison.svg` y `logo-starkpro.png`. La sección `#marcas` los muestra como imágenes (no como texto); Avery se invierte a blanco con CSS por su tinta oscura.
 - Cada foto `trabajo-*.jpg` se usa **una sola vez** en todo el sitio (resultados, servicios y galería). No repetir una imagen en dos secciones.
 

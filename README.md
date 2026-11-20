@@ -14,7 +14,9 @@ HTML/CSS/JS vanilla, sin build ni frameworks. Alojado en **GitHub Pages** (rama 
 ├── index.html        # Única página (sitio one-page)
 ├── style.css         # Estilos + design tokens (variables CSS en :root)
 ├── script.js         # Interactividad (menú móvil, scroll, animaciones, toast)
-├── logo.jpg          # Logo + favicon
+├── logo.jpg          # Logo del header y apple-touch-icon
+├── logo-busqueda.svg # Favicon SVG (aparece en resultados de búsqueda)
+├── favicon-192.png   # Favicon PNG 192x192 (respaldo)
 ├── carfilms-logo.jpg # Logo (og:image)
 ├── *.mp4             # Video del hero
 ├── trabajo-*.jpg     # Fotos reales de trabajos (resultados y galería)
