@@ -77,6 +77,9 @@
                 <a href="#galeria" class="nav-link">Galería</a>
                 <a href="#beneficios" class="nav-link">Beneficios</a>
                 <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#proceso" class="nav-link">Proceso</a>
+                <a href="#cotizar" class="nav-link">Cotizar</a>
+                <a href="#preguntas" class="nav-link">Preguntas</a>
                 <a href="#testimonios" class="nav-link">Testimonios</a>
                 <a href="https://wa.me/573022469542" class="btn-nav-whatsapp" target="_blank" rel="noopener noreferrer">
                     <svg class="icon-whatsapp" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
@@ -97,6 +100,9 @@
         <a href="#galeria" class="mobile-nav-link">Galería</a>
         <a href="#beneficios" class="mobile-nav-link">Beneficios</a>
         <a href="#servicios" class="mobile-nav-link">Servicios</a>
+        <a href="#proceso" class="mobile-nav-link">Proceso</a>
+        <a href="#cotizar" class="mobile-nav-link">Cotizar</a>
+        <a href="#preguntas" class="mobile-nav-link">Preguntas</a>
         <a href="#testimonios" class="mobile-nav-link">Testimonios</a>
         <a href="https://wa.me/573022469542" class="btn-whatsapp-mobile" target="_blank" rel="noopener noreferrer">
             <svg class="icon-whatsapp" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
@@ -345,6 +351,39 @@
         </div>
     </section>
 
+    <!-- Proceso de servicio -->
+    <section class="proceso" id="proceso">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Proceso</span>
+                <h2 class="section-title">Cómo trabajamos en tu vehículo</h2>
+                <p class="section-subtitle">Un proceso técnico, sin improvisaciones, con entrega acordada en el taller de Medellín.</p>
+            </div>
+            <div class="proceso-grid">
+                <div class="paso">
+                    <div class="paso-numero">01</div>
+                    <h3 class="paso-titulo">Diagnóstico</h3>
+                    <p class="paso-texto">Revisamos el estado actual de la pintura y definimos las zonas a proteger.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">02</div>
+                    <h3 class="paso-titulo">Cotización</h3>
+                    <p class="paso-texto">Te enviamos una cotización personalizada según tu vehículo y el servicio elegido.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">03</div>
+                    <h3 class="paso-titulo">Agenda</h3>
+                    <p class="paso-texto">Agendamos la fecha y hora de instalación en el taller.</p>
+                </div>
+                <div class="paso">
+                    <div class="paso-numero">04</div>
+                    <h3 class="paso-titulo">Entrega</h3>
+                    <p class="paso-texto">Entregamos tu vehículo con el acabado acordado y revisión final incluida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Brands Section -->
     <section class="brands" id="marcas">
         <div class="container">
@@ -549,6 +588,94 @@
         </div>
     </section>
 
+    <!-- Cotización -->
+    <section class="cotizar" id="cotizar">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Cotización</span>
+                <h2 class="section-title">Solicita tu cotización personalizada</h2>
+                <p class="section-subtitle">Envíanos los datos de tu vehículo y el servicio que te interesa. Te responderemos por WhatsApp.</p>
+            </div>
+            <form class="form-cotizacion" id="formCotizacion" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / WhatsApp</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="+57 300 000 0000" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="vehiculo">Tipo de vehículo</label>
+                        <select id="vehiculo" name="vehiculo" required aria-required="true">
+                            <option value="">Selecciona</option>
+                            <option value="sedan">Sedán</option>
+                            <option value="suv">SUV / Camioneta</option>
+                            <option value="pickup">Pickup</option>
+                            <option value="coupe">Coupé / Deportivo</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="servicio">Servicio de interés</label>
+                        <select id="servicio" name="servicio" required aria-required="true">
+                            <option value="">Selecciona</option>
+                            <option value="ppf">PPF Completo</option>
+                            <option value="polarizado">Polarizado Profesional</option>
+                            <option value="wrap">Wrap Completo</option>
+                            <option value="detailing">Detailing Premium</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group full">
+                    <label for="mensaje">Mensaje opcional</label>
+                    <textarea id="mensaje" name="mensaje" rows="3" placeholder="Año, modelo, color o cualquier detalle…"></textarea>
+                </div>
+                <div class="form-group terms">
+                    <input type="checkbox" id="terminos" name="terminos" required>
+                    <label for="terminos">Acepto la <a href="#" target="_blank" rel="noopener noreferrer">política de tratamiento de datos</a></label>
+                    <span class="terms-note">[POLÍTICA DE DATOS PENDIENTE]</span>
+                </div>
+                <button type="submit" class="btn btn-submit" id="btnSubmit">Enviar cotización por WhatsApp</button>
+            </form>
+            <div id="formMensaje" class="form-mensaje" role="status" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="faq" id="preguntas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Preguntas frecuentes</span>
+                <h2 class="section-title">Preguntas frecuentes</h2>
+                <p class="section-subtitle">Respuestas basadas en la información publicada del taller.</p>
+            </div>
+            <div class="faq-grid">
+                <details class="faq-item">
+                    <summary class="faq-pregunta">¿Qué incluye el PPF Completo?</summary>
+                    <p class="faq-respuesta">Cobertura de toda la carrocería con película de poliuretano de 8 mils, acabado brillante o mate, revisión del acabado a los 15 días y garantía de 10 años.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-pregunta">¿Cuánto tarda la instalación?</summary>
+                    <p class="faq-respuesta">PPF y detailing: 2 días. Wrap: 3 días. Polarizado: 3 horas. Tiemmos de entrega publicados en el sitio.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-pregunta">¿Dónde queda el taller?</summary>
+                    <p class="faq-respuesta">Cra. 71 #30-11, Belén, Medellín.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-pregunta">¿Trabajan con vehículos de lujo?</summary>
+                    <p class="faq-respuesta">[RESPUESTA PENDIENTE DE VALIDACIÓN]</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-pregunta">¿Ofrecen servicio a domicilio?</summary>
+                    <p class="faq-respuesta">[RESPUESTA PENDIENTE DE VALIDACIÓN]</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA Section -->
     <section class="final-cta" id="contacto">
         <div class="container">
@@ -661,6 +788,15 @@
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
         <span class="whatsapp-tooltip">¡Cotiza Ahora!</span>
     </a>
+
+    <!-- Barra inferior fija de acción en móvil -->
+    <div class="mobile-action-bar" id="mobileActionBar" aria-hidden="true">
+        <button class="mobile-action-close" id="mobileActionClose" aria-label="Cerrar barra de acción">✕</button>
+        <a href="https://wa.me/573022469542" class="mobile-action-whatsapp" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><use href="#icon-whatsapp"/></svg>
+            Cotizar por WhatsApp
+        </a>
+    </div>
 
     <!-- Toast de confirmación para CTAs de WhatsApp -->
     <div class="toast" id="waToast" role="status" aria-live="polite">Abriendo WhatsApp…</div>

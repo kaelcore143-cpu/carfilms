@@ -221,5 +221,79 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = '';
         });
     });
-    
+
+    // ============================================
+    // Barra de acción móvil (solo pantallas pequeñas)
+    // ============================================
+    const mobileActionBar = document.getElementById('mobileActionBar');
+    const mobileActionClose = document.getElementById('mobileActionClose');
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (mobileActionBar && mobileActionClose && isMobile) {
+        mobileActionBar.setAttribute('aria-hidden', 'false');
+        mobileActionBar.classList.add('visible');
+        document.body.classList.remove('no-action-bar');
+
+        mobileActionClose.addEventListener('click', function() {
+            mobileActionBar.classList.remove('visible');
+            mobileActionBar.setAttribute('aria-hidden', 'true');
+            document.body.classList.add('no-action-bar');
+        });
+    }
+
+    // ============================================
+    // Formulario de cotización -> WhatsApp
+    // ============================================
+    const formCotizacion = document.getElementById('formCotizacion');
+    const formMensaje = document.getElementById('formMensaje');
+    const btnSubmit = document.getElementById('btnSubmit');
+
+    if (formCotizacion && formMensaje && btnSubmit) {
+        formCotizacion.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const vehiculo = document.getElementById('vehiculo').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value.trim();
+
+            if (!nombre || !telefono || !vehiculo || !servicio) {
+                mostrarMensajeFormulario('Por favor completa los campos obligatorios.', 'error');
+                return;
+            }
+
+            const texto = [
+                'Hola, vengo de la página de CARFILMS y quiero solicitar una cotización.',
+                '',
+                'Nombre: ' + nombre,
+                'Teléfono: ' + telefono,
+                'Vehículo: ' + vehiculo,
+                'Servicio: ' + servicio,
+                mensaje ? 'Mensaje: ' + mensaje : ''
+            ].filter(Boolean).join('%0A');
+
+            const url = 'https://wa.me/573022469542?text=' + texto;
+
+            btnSubmit.textContent = 'Abriendo WhatsApp…';
+            btnSubmit.disabled = true;
+
+            setTimeout(function() {
+                window.open(url, '_blank');
+                mostrarMensajeFormulario('Se abrió WhatsApp con tu cotización.', 'success');
+                btnSubmit.textContent = 'Enviar cotización por WhatsApp';
+                btnSubmit.disabled = false;
+                formCotizacion.reset();
+            }, 400);
+        });
+    }
+
+    function mostrarMensajeFormulario(texto, tipo) {
+        formMensaje.textContent = texto;
+        formMensaje.className = 'form-mensaje visible ' + tipo;
+        setTimeout(function() {
+            formMensaje.classList.remove('visible');
+        }, 5000);
+    }
+
 });
