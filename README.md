@@ -46,7 +46,7 @@ Checklist antes de subir:
 - **Dirección:** Cra. 71 #30-11, Belén, Medellín
 - **WhatsApp:** [+57 302 246 9542](https://wa.me/573022469542)
 - **Horario:** Lun 8AM-6PM · Mar-Jue 8AM-9PM · Sáb 8AM-9PM
-- **Instagram:** [@ppf_nano_polarizados](https://www.instagram.com/ppf_nano_polarizados/)
+- **Instagram:** [@carfilms_ppf_polarizados](https://www.instagram.com/carfilms_ppf_polarizados/)
 - **Facebook:** [ppf_nano_polarizados](https://www.facebook.com/403772080418525)
 
 © 2026 CarFilms Estética Vehicular.
