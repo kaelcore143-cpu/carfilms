@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Observe elements for animation
     const animatedElements = document.querySelectorAll(
-        '.benefit-card, .service-card, .result-card, .testimonial-card, .trust-feature-item, .stat-item, .contact-item'
+        '.benefit-card, .service-card, .result-card, .testimonial-card, .trust-feature-item'
     );
     
     animatedElements.forEach(el => {
@@ -204,29 +204,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ============================================
-    // Performance: Lazy Load Images
-    // ============================================
-    const images = document.querySelectorAll('img[data-src]');
-    
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.removeAttribute('data-src');
-                    observer.unobserve(img);
-                }
-            });
-        });
-        
-        images.forEach(img => imageObserver.observe(img));
-    }
-    
-    // ============================================
     // Button Click Effects
     // ============================================
-    const allButtons = document.querySelectorAll('.btn-primary, .btn-service, .btn-cta-large');
+    const allButtons = document.querySelectorAll('.btn-service');
     
     allButtons.forEach(button => {
         button.addEventListener('mousedown', function() {
