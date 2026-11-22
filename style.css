@@ -1981,6 +1981,11 @@ button:focus-visible,
     cursor: pointer;
     padding: 0.25rem;
     line-height: 1;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mobile-action-close:hover {
@@ -2019,8 +2024,18 @@ button:focus-visible,
         padding-bottom: 80px;
     }
 
+    /* La barra inferior reemplaza al botón flotante: no superponer ambos */
+    .whatsapp-fixed {
+        display: none;
+    }
+
     body.no-action-bar {
         padding-bottom: 0;
+    }
+
+    /* Si el usuario cierra la barra, vuelve el botón flotante */
+    body.no-action-bar .whatsapp-fixed {
+        display: flex;
     }
 }
 
