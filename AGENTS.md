@@ -7,6 +7,7 @@ Orientación compacta para futuras sesiones de OpenCode. Cada línea responde a 
 - No existe `package.json`, `opencode.json`, `.gitignore` ni `.github/`. No hay nada que compilar ni instalar.
 - Para verlo: abrir `index.html` en el navegador o servir la raíz con cualquier servidor estático.
 - **Todo va en la raíz** — no crear `assets/`, `img/` ni `videos/`.
+- Páginas: `index.html` (one-page principal) y `politica-privacidad.html` (página independiente, noindex).
 
 ## Despliegue (GitHub Pages)
 - Pages publica automáticamente desde la rama `main`, origen raíz `/`. Cada push a `main` reconstruye el sitio.
@@ -18,6 +19,7 @@ Orientación compacta para futuras sesiones de OpenCode. Cada línea responde a 
 - Cada foto `trabajo-*.jpg` se usa **una sola vez** en `index.html`; no repetir la misma imagen en dos secciones.
 - `trabajo-pickup-taller.jpg` y `trabajo-pickup-tres-cuartos.jpg` existen en el repo pero **no se referencian** en `index.html`.
 - `carfilms-logo.jpg` solo se usa como `og:image`, `twitter:image` e imagen de json-ld; no aparece en el body.
+- `politica-privacidad.html` es una página independiente (noindex) con placeholders `[VERIFICAR CON EL CLIENTE]` y `[POLÍTICA DE DATOS PENDIENTE]`. Enlazada desde el formulario de cotización y el footer.
 - El video hero (`15448797-hd_1920_1080_60fps.mp4`, ~3 MB) es el **único** `<video>` del sitio. El `poster` es un SVG inline de respaldo.
 - `#marcas` muestra solo Avery Dennison y StarkPro como imágenes. Avery se invierte con `filter: brightness(0) invert(1)` y StarkPro se aclara con `brightness(1.25)` en `style.css`.
 
@@ -32,6 +34,7 @@ Orientación compacta para futuras sesiones de OpenCode. Cada línea responde a 
 - Testimonios: `?text=Hola,%20vi%20los%20testimonios%20y%20quiero%20agendar`.
 - Header, menú móvil, CTA final, footer y 404 usan la base sin `?text`.
 - Quirk: el HTML mezcla `%2C` (PPF) con `,` (resto). No "arreglar" la codificación sin querer.
+- Navbar simplificado (desktop y móvil): RESULTADOS, GALERÍA, SERVICIOS, COTIZAR, TESTIMONIOS y CTA WhatsApp. BENEFICIOS, PROCESO y PREGUNTAS se quitaron del navbar pero siguen accesibles por ancla (`#beneficios`, `#proceso`, `#preguntas`) y por URL directa.
 
 ## Tokens y responsive (`style.css`)
 - Colores: líneas 10-18 (`--color-black`, `-black-light`, `-black-lighter`, `--color-silver` + variantes, `--color-gold`, `--color-gold-light`, `--color-white`). **No existe `--shadow-dark`.**
