@@ -19,8 +19,8 @@ Orientación compacta para futuras sesiones de OpenCode. Cada línea responde a 
 - Cada foto `trabajo-*.jpg` se usa **una sola vez** en `index.html`; no repetir la misma imagen en dos secciones.
 - `trabajo-pickup-taller.jpg` y `trabajo-pickup-tres-cuartos.jpg` existen en el repo pero **no se referencian** en `index.html`.
 - `carfilms-logo.jpg` solo se usa como `og:image`, `twitter:image` e imagen de json-ld; no aparece en el body.
-- `politica-privacidad.html` es una página independiente (noindex) con placeholders `[VERIFICAR CON EL CLIENTE]` y `[POLÍTICA DE DATOS PENDIENTE]`. Enlazada desde el formulario de cotización y el footer.
-- El video hero (`15448797-hd_1920_1080_60fps.mp4`, ~3 MB) es el **único** `<video>` del sitio. El `poster` es un SVG inline de respaldo.
+- `politica-privacidad.html` es una página independiente (noindex) con placeholders `[VERIFICAR CON EL CLIENTE]`; el `[POLÍTICA DE DATOS PENDIENTE]` del formulario se quitó. Enlazada desde el formulario de cotización y el footer.
+- Videos en la raíz: `15448797-hd_1920_1080_60fps.mp4` (hero, autoplay/muted/loop, poster SVG inline) y `video-1.mp4` … `video-5.mp4` (galería, `preload="none"`, clic para reproducir, clic fuera para detener, títulos neutros sin contenido inventado). Todos < 25 MB. No existe carpeta `videos/`.
 - `#marcas` muestra solo Avery Dennison y StarkPro como imágenes. Avery se invierte con `filter: brightness(0) invert(1)` y StarkPro se aclara con `brightness(1.25)` en `style.css`.
 
 ## Precios y tiempos (nov 2026)
@@ -45,8 +45,9 @@ Orientación compacta para futuras sesiones de OpenCode. Cada línea responde a 
 - Solo vanilla; sin jQuery ni frameworks.
 - Header: el JS escribe `background: rgba(10,10,10,0.98)` inline al superar 100px de scroll (el CSS base es 0.95). El estilo inline gana: cambiar solo el CSS no basta.
 - Parallax del hero bloqueado en móvil: `window.innerWidth > 768 && !window.matchMedia('(pointer: coarse)').matches`.
-- `IntersectionObserver` se usa solo para `fade-in-up`. Las imágenes usan `loading="lazy"` nativo; el bloque `img[data-src]` del JS está muerto (ningún `data-src` en el HTML).
+- `IntersectionObserver` se usa solo para `fade-in-up`. Las imágenes usan `loading="lazy"` nativo.
 - `visibilitychange` pausa y reanuda todos los `<video>` al ocultar/mostrar la pestaña.
+- Videos de galería: JS en `script.js` gestiona clic en `.video-play-btn`/`.video-wrapper` para reproducir y clic fuera para pausar todos.
 - Toast `#waToast`: 3 s al hacer clic en cualquier enlace `wa.me`.
 - Menú móvil: `aria-expanded`/`aria-label` actualizados, Escape cierra y devuelve el foco, bloquea `body.style.overflow`.
 - `prefers-reduced-motion`: desactiva el pulso y el hover de imágenes (no todas las animaciones). `prefers-reduced-data`: `display:none` en todos los `<video>`.
