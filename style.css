@@ -2025,26 +2025,18 @@ button:focus-visible,
 }
 
 /* ============================================
-   VIDEOS DE GALERÍA
+   VIDEOS DE GALERÍA (integrados en gallery-grid)
    ============================================ */
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
-}
-
 .video-item {
     position: relative;
     overflow: hidden;
-    border-radius: var(--radius-md);
     background: var(--color-black);
 }
 
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 133%;
+    aspect-ratio: 4 / 5;
     overflow: hidden;
     background: var(--color-black);
 }
@@ -2096,10 +2088,4 @@ button:focus-visible,
 
 .video-item .gallery-video {
     pointer-events: none;
-}
-
-@media (max-width: 480px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
 }
