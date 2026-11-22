@@ -17,10 +17,10 @@ Orientación compacta para futuras sesiones de OpenCode. Cada línea responde a 
 
 ## Assets y contenido
 - Cada foto `trabajo-*.jpg` se usa **una sola vez** en `index.html`; no repetir la misma imagen en dos secciones.
-- `trabajo-pickup-taller.jpg` y `trabajo-pickup-tres-cuartos.jpg` existen en el repo pero **no se referencian** en `index.html`.
+- `trabajo-detalle-pickup.jpg` se usa además como poster del video-4. Las únicas fotos de pickup que quedan son `trabajo-pickup-frontal.jpg` y `trabajo-detalle-pickup.jpg` (se eliminaron `trabajo-pickup-taller.jpg` y `trabajo-pickup-tres-cuartos.jpg` por no usarse).
 - `carfilms-logo.jpg` solo se usa como `og:image`, `twitter:image` e imagen de json-ld; no aparece en el body.
 - `politica-privacidad.html` es una página independiente (noindex) con placeholders `[VERIFICAR CON EL CLIENTE]`; el `[POLÍTICA DE DATOS PENDIENTE]` del formulario se quitó. Enlazada desde el formulario de cotización y el footer.
-- Videos en la raíz: `15448797-hd_1920_1080_60fps.mp4` (hero, autoplay/muted/loop, poster SVG inline) y `video-1.mp4` … `video-5.mp4` (galería, `preload="none"`, clic para reproducir, clic fuera para detener, títulos neutros sin contenido inventado). Todos < 25 MB. No existe carpeta `videos/`.
+- Videos en la raíz: `video-3.mp4` es el **hero** (autoplay/muted/loop, poster SVG inline); `video-1.mp4` … `video-5.mp4` están integrados en `.gallery-grid` de la galería (`preload="none"`, clic para reproducir, clic fuera para detener, títulos neutros). El hero también aparece en la galería. Todos < 25 MB. No existe carpeta `videos/`.
 - `#marcas` muestra solo Avery Dennison y StarkPro como imágenes. Avery se invierte con `filter: brightness(0) invert(1)` y StarkPro se aclara con `brightness(1.25)` en `style.css`.
 
 ## Precios y tiempos (nov 2026)
