@@ -296,4 +296,71 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
+    // ============================================
+    // Videos de galería: clic para reproducir / clic fuera para detener
+    // ============================================
+    const videoItems = document.querySelectorAll('.video-item');
+
+    function pauseAllVideos(exceptItem) {
+        videoItems.forEach(function(item) {
+            const video = item.querySelector('.gallery-video');
+            const btn = item.querySelector('.video-play-btn');
+            if (video && video !== (exceptItem ? exceptItem.querySelector('.gallery-video') : null)) {
+                video.pause();
+                video.classList.remove('playing');
+                if (btn) btn.style.display = 'flex';
+            }
+        });
+    }
+
+    videoItems.forEach(function(item) {
+        const video = item.querySelector('.gallery-video');
+        const btn = item.querySelector('.video-play-btn');
+        const wrapper = item.querySelector('.video-wrapper');
+
+        function toggleVideo() {
+            if (video.paused || video.ended) {
+                pauseAllVideos(item);
+                video.play().catch(function() {});
+                video.classList.add('playing');
+                if (btn) btn.style.display = 'none';
+            } else {
+                video.pause();
+                video.classList.remove('playing');
+                if (btn) btn.style.display = 'flex';
+            }
+        }
+
+        if (btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleVideo();
+            });
+        }
+
+        if (wrapper) {
+            wrapper.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleVideo();
+            });
+        }
+
+        video.addEventListener('pause', function() {
+            video.classList.remove('playing');
+            if (btn) btn.style.display = 'flex';
+        });
+
+        video.addEventListener('play', function() {
+            video.classList.add('playing');
+            if (btn) btn.style.display = 'none';
+        });
+    });
+
+    // Clic fuera de cualquier video: detener todos
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.video-item')) {
+            pauseAllVideos(null);
+        }
+    });
+
 });
