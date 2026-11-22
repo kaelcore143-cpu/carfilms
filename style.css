@@ -2018,26 +2018,7 @@ button:focus-visible,
     transform: translateY(-1px);
 }
 
-/* Evitar que la barra fija tape el contenido en móvil */
-@media (max-width: 768px) {
-    body {
-        padding-bottom: 80px;
-    }
-
-    /* La barra inferior reemplaza al botón flotante: no superponer ambos */
-    .whatsapp-fixed {
-        display: none;
-    }
-
-    body.no-action-bar {
-        padding-bottom: 0;
-    }
-
-    /* Si el usuario cierra la barra, vuelve el botón flotante */
-    body.no-action-bar .whatsapp-fixed {
-        display: flex;
-    }
-}
+/* La burbuja flotante de WhatsApp se muestra también en móvil */
 
 /* ============================================
    VIDEOS DE GALERÍA (integrados en gallery-grid)
