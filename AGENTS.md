@@ -16,11 +16,10 @@ Orientación compacta para futuras sesiones de OpenCode. Cada línea responde a 
 - `404.html` es la página de error que Pages sirve automáticamente (no tiene CTA fijo ni header).
 
 ## Assets y contenido
-- Cada foto `trabajo-*.jpg` se usa **una sola vez** en `index.html`; no repetir la misma imagen en dos secciones.
-- `trabajo-detalle-pickup.jpg` se usa además como poster del video-4. Las únicas fotos de pickup que quedan son `trabajo-pickup-frontal.jpg` y `trabajo-detalle-pickup.jpg` (se eliminaron `trabajo-pickup-taller.jpg` y `trabajo-pickup-tres-cuartos.jpg` por no usarse).
-- `carfilms-logo.jpg` solo se usa como `og:image`, `twitter:image` e imagen de json-ld; no aparece en el body.
-- `politica-privacidad.html` es una página independiente (noindex) con placeholders `[VERIFICAR CON EL CLIENTE]`; el `[POLÍTICA DE DATOS PENDIENTE]` del formulario se quitó. Enlazada desde el formulario de cotización y el footer.
-- Videos en la raíz: `video-3.mp4` es el **hero** (autoplay/muted/loop, poster SVG inline); `video-1.mp4` … `video-5.mp4` están integrados en `.gallery-grid` de la galería (`preload="none"`, clic para reproducir, clic fuera para detener, títulos neutros). El hero también aparece en la galería. Todos < 25 MB. No existe carpeta `videos/`.
+- Todo en la raíz: `newherovideo.mp4` (hero, autoplay/muted/loop, poster SVG inline) y `video-1.mp4` (único video en la galería, `preload="none"`, clic para reproducir, clic fuera para detener). No existen `video-2..5.mp4`, ni `15448797-...mp4`, ni carpeta `videos/`.
+- Fotos: `servicio-ppf.jpeg`, `servicio-polarizado.jpeg`, `servicio-wrap.jpeg`, `servicio-detailing.jpeg` en Servicios; `trabajo-nuevo-1..8.jpeg` en la galería; `trabajo-pickup-frontal.jpg` es poster del video-1; `antus.png`/`despus.png` son el slider antes/después de Resultados (texto en Wrap).
+- `carfilms-logo.jpg` solo se usa como `og:image`, `twitter:image` e imagen de json-ld; no aparece en el body. `favicon.ico` se conserva porque los navegadores lo piden en `/favicon.ico`.
+- `politica-privacidad.html` es una página independiente (noindex) **completa con datos reales del cliente** (NIT 1017227339, contabilidadcarfilms@gmail.com, vigencia 23/11/2026). Enlazada desde el formulario de cotización.
 - `#marcas` muestra solo Avery Dennison y StarkPro como imágenes. Avery se invierte con `filter: brightness(0) invert(1)` y StarkPro se aclara con `brightness(1.25)` en `style.css`.
 
 ## Precios y tiempos (nov 2026)
@@ -34,7 +33,7 @@ Orientación compacta para futuras sesiones de OpenCode. Cada línea responde a 
 - Testimonios: `?text=Hola,%20vi%20los%20testimonios%20y%20quiero%20agendar`.
 - Header, menú móvil, CTA final, footer y 404 usan la base sin `?text`.
 - Quirk: el HTML mezcla `%2C` (PPF) con `,` (resto). No "arreglar" la codificación sin querer.
-- Navbar simplificado (desktop y móvil): RESULTADOS, GALERÍA, SERVICIOS, COTIZAR, TESTIMONIOS y CTA WhatsApp. BENEFICIOS, PROCESO y PREGUNTAS se quitaron del navbar pero siguen accesibles por ancla (`#beneficios`, `#proceso`, `#preguntas`) y por URL directa.
+- Navbar simplificado (desktop y móvil): RESULTADOS, GALERÍA, SERVICIOS, TESTIMONIOS y CTA WhatsApp. BENEFICIOS, PROCESO, PREGUNTAS y COTIZAR se quitaron del navbar pero siguen accesibles por ancla (`#beneficios`, `#proceso`, `#preguntas`, `#cotizar`) y por URL directa.
 
 ## Tokens y responsive (`style.css`)
 - Colores: líneas 10-18 (`--color-black`, `-black-light`, `-black-lighter`, `--color-silver` + variantes, `--color-gold`, `--color-gold-light`, `--color-white`). **No existe `--shadow-dark`.**

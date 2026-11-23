@@ -578,12 +578,6 @@ button {
     transition: var(--transition-slow);
 }
 
-/* Encuadre de cada foto dentro de la tarjeta */
-.service-image img.service-img-ppf { object-position: center 45%; }
-.service-image img.service-img-tint { object-position: center 12%; }
-.service-image img.service-img-wrap { object-position: center 55%; }
-.service-image img.service-img-detail { object-position: center 45%; }
-
 .service-card:hover .service-image img {
     transform: scale(1.05);
 }
@@ -671,41 +665,6 @@ button {
 .results {
     padding: var(--spacing-xl) 0;
     background: var(--color-black);
-}
-
-.results-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-}
-
-.result-card {
-    overflow: hidden;
-}
-
-.result-info {
-    padding: var(--spacing-md);
-}
-
-.result-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color-white);
-    margin-bottom: 0.25rem;
-}
-
-.result-car {
-    font-size: 0.9rem;
-    color: var(--color-gold);
-    font-weight: 500;
-}
-
-/* Resultado real (foto) */
-.result-photo-img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
 }
 
 /* ============================================
@@ -834,18 +793,6 @@ button {
 
 .gallery-item:hover img {
     transform: scale(1.04);
-}
-
-.gallery-caption {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-sm);
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.92), transparent);
-    color: var(--color-white);
-    font-size: 0.9rem;
-    font-weight: 600;
 }
 
 @media (max-width: 1024px) {
@@ -1420,26 +1367,6 @@ button {
     height: 24px;
 }
 
-/* Results Featured Cards */
-.result-label-tag {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background: rgba(0, 0, 0, 0.8);
-    color: var(--color-white);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-sm);
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    z-index: 2;
-}
-
-.result-label-tag-gold {
-    background: var(--gradient-gold);
-    color: var(--color-black);
-}
-
 .results-cta {
     text-align: center;
     margin-top: var(--spacing-lg);
@@ -1844,10 +1771,6 @@ button:focus-visible,
     gap: var(--spacing-xs);
 }
 
-.form-group.full {
-    grid-column: 1 / -1;
-}
-
 .form-group label {
     font-size: 0.9rem;
     font-weight: 600;
@@ -1910,13 +1833,6 @@ button:focus-visible,
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
-}
-
-.terms-note {
-    font-size: 0.8rem;
-    color: var(--color-silver-dark);
-    display: block;
-    margin-top: var(--spacing-xs);
 }
 
 .btn-submit {
@@ -2188,24 +2104,3 @@ button:focus-visible,
     pointer-events: none;
 }
 
-/* ============================================
-   PLACEHOLDERS DE IMÁGENES (sin foto)
-   ============================================ */
-.image-placeholder {
-    display: block;
-    width: 100%;
-    background: var(--color-black-lighter);
-    border: 1px dashed rgba(212, 175, 55, 0.35);
-}
-
-.image-placeholder.result-photo-img {
-    aspect-ratio: 4 / 5;
-}
-
-.image-placeholder.service-img {
-    height: 100%;
-}
-
-.image-placeholder.gallery-placeholder {
-    aspect-ratio: 4 / 5;
-}
