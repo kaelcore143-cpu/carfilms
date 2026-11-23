@@ -79,7 +79,7 @@
                 <label for="mensajeFinal" style="font-weight: 600; color: var(--color-white); display: block; margin-bottom: var(--spacing-xs);">Mensaje listo para copiar y enviar:</label>
                 <textarea id="mensajeFinal" rows="16" readonly style="width: 100%; padding: 1rem; font-size: 0.9rem; font-family: var(--font-primary); background: var(--color-black-lighter); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: var(--radius-md); color: var(--color-white); box-sizing: border-box;"></textarea>
                 <button type="button" class="btn btn-submit" id="btnCopiar" style="margin-top: var(--spacing-sm);">Copiar mensaje</button>
-                <a href="https://wa.me/573022469542" target="_blank" rel="noopener noreferrer" class="btn btn-submit" style="margin-top: var(--spacing-sm); display: inline-flex; text-decoration: none;">Abrir WhatsApp</a>
+                <a id="btnWhatsapp" href="https://wa.me/573012787784" target="_blank" rel="noopener noreferrer" class="btn btn-submit" style="margin-top: var(--spacing-sm); display: inline-flex; text-decoration: none;">Enviar por WhatsApp</a>
             </div>
         </div>
     </main>
@@ -107,6 +107,7 @@
             });
 
             document.getElementById('mensajeFinal').value = mensaje;
+            document.getElementById('btnWhatsapp').href = 'https://wa.me/573012787784?text=' + encodeURIComponent(mensaje);
             document.getElementById('resultado').style.display = 'block';
             document.getElementById('resultado').classList.add('visible');
         });

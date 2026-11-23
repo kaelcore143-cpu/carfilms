@@ -405,6 +405,31 @@ button {
     border-color: var(--color-white);
 }
 
+.hero-client-link-wrap {
+    margin: var(--spacing-md) 0 0;
+}
+
+.hero-client-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    color: var(--color-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.hero-client-link:hover {
+    color: var(--color-gold-light);
+}
+
+.hero-client-link:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+}
+
 .hero-trust {
     display: flex;
     align-items: center;
