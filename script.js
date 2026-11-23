@@ -363,4 +363,72 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // ============================================
+    // Slider ANTES / DESPUÉS
+    // ============================================
+    const baFrame = document.getElementById('baFrame');
+    const baBefore = document.getElementById('baBefore');
+    const baHandle = document.getElementById('baHandle');
+
+    if (baFrame && baBefore && baHandle) {
+        let dragging = false;
+        baFrame.dataset.sliderReady = 'true';
+
+        function setSlider(pos) {
+            const pct = Math.max(0, Math.min(100, pos));
+            baBefore.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+            baHandle.style.left = pct + '%';
+            baHandle.setAttribute('aria-valuenow', Math.round(pct));
+        }
+
+        function posFromEvent(e) {
+            const rect = baFrame.getBoundingClientRect();
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            return ((clientX - rect.left) / rect.width) * 100;
+        }
+
+        baFrame.addEventListener('mousedown', function(e) {
+            dragging = true;
+            setSlider(posFromEvent(e));
+        });
+
+        baFrame.addEventListener('touchstart', function(e) {
+            dragging = true;
+            setSlider(posFromEvent(e));
+        }, { passive: true });
+
+        window.addEventListener('mousemove', function(e) {
+            if (dragging) setSlider(posFromEvent(e));
+        });
+
+        window.addEventListener('touchmove', function(e) {
+            if (dragging) setSlider(posFromEvent(e));
+        }, { passive: true });
+
+        window.addEventListener('mouseup', function() {
+            dragging = false;
+        });
+
+        window.addEventListener('touchend', function() {
+            dragging = false;
+        });
+
+        baHandle.addEventListener('keydown', function(e) {
+            const current = parseFloat(baHandle.getAttribute('aria-valuenow')) || 50;
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                setSlider(current - 5);
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                setSlider(current + 5);
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                setSlider(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                setSlider(100);
+            }
+        });
+    }
+
 });

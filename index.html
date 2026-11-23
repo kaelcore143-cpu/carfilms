@@ -107,7 +107,7 @@
     <section class="hero" id="inicio">
         <div class="hero-video-container">
             <video autoplay muted loop playsinline class="hero-video" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080' viewBox='0 0 1920 1080'%3E%3Crect fill='%230a0a0a' width='1920' height='1080'/%3E%3C/svg%3E">
-                <source src="video-3.mp4" type="video/mp4">
+                <source src="newherovideo.mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
         </div>
@@ -164,25 +164,18 @@
             <div class="section-header">
                 <span class="section-tag">Resultados Reales</span>
                 <h2 class="section-title">Así se ve un PPF Completo terminado</h2>
-                <p class="section-subtitle">Trabajo real de nuestro taller en Medellín. Este Kia EV6 salió con PPF Completo, acabado brillante y protección total de la carrocería.</p>
+                <p class="section-subtitle">Trabajo real de nuestro taller en Medellín. Este Toyota salió con PPF Completo, acabado brillante y protección total de la carrocería.</p>
             </div>
-            <div class="results-grid">
-                <figure class="card result-card result-photo">
-                    <div class="result-label-tag result-label-tag-gold">PPF COMPLETO</div>
-                    <img src="trabajo-ppf-ev6-frontal.jpg" alt="Kia EV6 gris con PPF Completo terminado, visto de frente dentro del taller CarFilms" class="result-photo-img" loading="lazy" decoding="async" width="960" height="1280">
-                    <figcaption class="result-info">
-                        <h3 class="result-title">PPF completo</h3>
-                        <p class="result-car">Carrocería completa con película de 8 mils y acabado brillante.</p>
-                    </figcaption>
-                </figure>
-                <figure class="card result-card result-photo result-after-card">
-                    <div class="result-label-tag result-label-tag-gold">ACABADO ESPEJO</div>
-                    <img src="trabajo-ppf-ev6-brillo.jpg" alt="Reflejo del techo del Kia EV6 sobre el capó con PPF, sin textura de naranja" class="result-photo-img" loading="lazy" decoding="async" width="960" height="1280">
-                    <figcaption class="result-info">
-                        <h3 class="result-title">Brillo y profundidad</h3>
-                        <p class="result-car">Reflejo limpio, sin textura de naranja ni bordes visibles.</p>
-                    </figcaption>
-                </figure>
+            <div class="before-after" id="beforeAfter">
+                <div class="before-after-frame" id="baFrame">
+                    <img src="despus.png" alt="Vehículo con PPF Completo aplicado, acabado brillante" class="ba-img ba-after" draggable="false">
+                    <img src="antus.png" alt="Vehículo antes de aplicar PPF Completo" class="ba-img ba-before" id="baBefore" style="clip-path: inset(0 50% 0 0);" draggable="false">
+                    <span class="ba-label ba-label-before">ANTES</span>
+                    <span class="ba-label ba-label-after">DESPUÉS</span>
+                    <div class="ba-handle" id="baHandle" role="slider" tabindex="0" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-orientation="horizontal" style="left: 50%;">
+                        <span class="ba-handle-arrows">‹ ›</span>
+                    </div>
+                </div>
             </div>
             <div class="results-cta">
                 <a href="https://wa.me/573022469542?text=Hola%2C%20vengo%20de%20la%20p%C3%A1gina%20de%20CARFILMS%20y%20quiero%20cotizar%20PPF%20completo.%20Mi%20carro%20es%20marca%20___%2C%20modelo%20___%2C%20a%C3%B1o%20___.%20Me%20interesa%20el%20acabado%20brillante%20o%20mate" class="btn-results" target="_blank" rel="noopener noreferrer">
@@ -256,7 +249,7 @@
             <div class="services-grid">
                 <div class="card service-card">
                     <div class="service-image">
-                        <img class="service-img service-img-ppf" src="trabajo-ppf-ev6-tres-cuartos.jpg" alt="Kia EV6 con PPF Completo instalado en CarFilms, vista tres cuartos" width="960" height="1280" loading="lazy" decoding="async">
+                        <div class="image-placeholder service-img" aria-hidden="true"></div>
                         <div class="service-overlay">
                             <span class="service-price">$6.900.000</span>
                         </div>
@@ -278,7 +271,7 @@
                 </div>
                 <div class="card service-card">
                     <div class="service-image">
-                        <img class="service-img service-img-tint" src="trabajo-ppf-ev6-lateral.jpg" alt="Kia EV6 con polarizado cerámico instalado, ventanas tintadas en el taller" width="960" height="1280" loading="lazy" decoding="async">
+                        <div class="image-placeholder service-img" aria-hidden="true"></div>
                         <div class="service-overlay">
                             <span class="service-price">$750.000</span>
                         </div>
@@ -299,7 +292,7 @@
                 </div>
                 <div class="card service-card">
                     <div class="service-image">
-                        <img class="service-img service-img-wrap" src="trabajo-pickup-frontal.jpg" alt="Pickup negra con acabado brillante tipo espejo en el taller CarFilms" width="960" height="1280" loading="lazy" decoding="async">
+                        <div class="image-placeholder service-img" aria-hidden="true"></div>
                         <div class="service-overlay">
                             <span class="service-price">$7.900.000</span>
                         </div>
@@ -320,7 +313,7 @@
                 </div>
                 <div class="card service-card">
                     <div class="service-image">
-                        <img class="service-img service-img-detail" src="trabajo-pulido-capo.jpg" alt="Pulido de capó con pulidora rotativa durante un detailing en CarFilms" width="1200" height="1600" loading="lazy" decoding="async">
+                        <div class="image-placeholder service-img" aria-hidden="true"></div>
                         <div class="service-overlay">
                             <span class="service-price">$300.000</span>
                         </div>
@@ -406,28 +399,28 @@
             </div>
             <div class="gallery-grid">
                 <figure class="card gallery-item">
-                    <img src="trabajo-detailing-chevrolet-frontal.jpg" alt="Chevrolet gris con detailing terminado, estacionado frente al taller" loading="lazy" decoding="async" width="960" height="1280">
+                    <img src="trabajo-nuevo-1.jpeg" alt="Trabajo real de estética vehicular en el taller CarFilms" loading="lazy" decoding="async">
                 </figure>
                 <figure class="card gallery-item">
-                    <img src="trabajo-detailing-chevrolet-lateral.jpg" alt="Chevrolet gris visto en tres cuartos con la pintura recuperada" loading="lazy" decoding="async" width="960" height="1280">
+                    <img src="trabajo-nuevo-2.jpeg" alt="Trabajo real de estética vehicular en el taller CarFilms" loading="lazy" decoding="async">
                 </figure>
                 <figure class="card gallery-item">
-                    <img src="trabajo-detailing-chevrolet-taller.jpg" alt="Chevrolet gris listo para entrega frente al aviso de servicios de CarFilms" loading="lazy" decoding="async" width="960" height="1280">
+                    <img src="trabajo-nuevo-3.jpeg" alt="Trabajo real de estética vehicular en el taller CarFilms" loading="lazy" decoding="async">
                 </figure>
                 <figure class="card gallery-item">
-                    <img src="trabajo-detailing-chevrolet-trasera.jpg" alt="Detalle del stop trasero de un Chevrolet Premier con acabado brillante" loading="lazy" decoding="async" width="960" height="1280">
+                    <img src="trabajo-nuevo-4.jpeg" alt="Trabajo real de estética vehicular en el taller CarFilms" loading="lazy" decoding="async">
                 </figure>
                 <figure class="card gallery-item">
-                    <img src="trabajo-detalle-pickup.jpg" alt="Instalador revisando el acabado de una pickup negra dentro del taller" loading="lazy" decoding="async" width="960" height="1280">
+                    <img src="trabajo-nuevo-5.jpeg" alt="Trabajo real de estética vehicular en el taller CarFilms" loading="lazy" decoding="async">
                 </figure>
                 <figure class="card gallery-item">
-                    <img src="trabajo-pulido-faros.jpg" alt="Pulido de faro delantero con pulidora durante el detailing" loading="lazy" decoding="async" width="1200" height="1600">
+                    <img src="trabajo-nuevo-6.jpeg" alt="Trabajo real de estética vehicular en el taller CarFilms" loading="lazy" decoding="async">
                 </figure>
                 <figure class="card gallery-item">
-                    <img src="trabajo-secado-puerta.jpg" alt="Secado y limpieza de la puerta con paño de microfibra" loading="lazy" decoding="async" width="960" height="1280">
+                    <img src="trabajo-nuevo-7.jpeg" alt="Trabajo real de estética vehicular en el taller CarFilms" loading="lazy" decoding="async">
                 </figure>
                 <figure class="card gallery-item">
-                    <img src="trabajo-acabado-puerta.jpg" alt="Revisión final del acabado de la puerta antes de la entrega" loading="lazy" decoding="async" width="960" height="1280">
+                    <img src="trabajo-nuevo-8.jpeg" alt="Trabajo real de estética vehicular en el taller CarFilms" loading="lazy" decoding="async">
                 </figure>
                 <div class="card gallery-item video-item">
                     <div class="video-wrapper">

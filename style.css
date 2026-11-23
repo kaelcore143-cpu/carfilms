@@ -709,6 +709,108 @@ button {
 }
 
 /* ============================================
+   SLIDER ANTES / DESPUÉS
+   ============================================ */
+.before-after {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-black-light);
+}
+
+.before-after-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1122 / 1402;
+    max-height: 70vh;
+    overflow: hidden;
+    cursor: ew-resize;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+}
+
+.ba-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    display: block;
+}
+
+.ba-after {
+    z-index: 1;
+}
+
+.ba-before {
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
+}
+
+.ba-label {
+    position: absolute;
+    top: var(--spacing-md);
+    z-index: 3;
+    padding: 0.5rem 1rem;
+    background: var(--color-gold);
+    color: var(--color-black);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: var(--radius-md);
+    pointer-events: none;
+    text-transform: uppercase;
+}
+
+.ba-label-before { left: var(--spacing-md); }
+.ba-label-after { right: var(--spacing-md); }
+
+.ba-handle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background: var(--color-black);
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    cursor: ew-resize;
+    box-shadow: var(--shadow-gold);
+    user-select: none;
+    pointer-events: none;
+}
+
+.ba-handle-arrows {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+    padding-right: 2px;
+}
+
+.ba-handle:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .before-after-frame {
+        max-height: none;
+    }
+}
+
+/* ============================================
    GALERÍA DE TRABAJOS REALES
    ============================================ */
 .gallery-grid {
@@ -2084,4 +2186,26 @@ button:focus-visible,
 
 .video-item .gallery-video {
     pointer-events: none;
+}
+
+/* ============================================
+   PLACEHOLDERS DE IMÁGENES (sin foto)
+   ============================================ */
+.image-placeholder {
+    display: block;
+    width: 100%;
+    background: var(--color-black-lighter);
+    border: 1px dashed rgba(212, 175, 55, 0.35);
+}
+
+.image-placeholder.result-photo-img {
+    aspect-ratio: 4 / 5;
+}
+
+.image-placeholder.service-img {
+    height: 100%;
+}
+
+.image-placeholder.gallery-placeholder {
+    aspect-ratio: 4 / 5;
 }
