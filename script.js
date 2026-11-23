@@ -252,28 +252,28 @@ document.addEventListener('DOMContentLoaded', function() {
         formCotizacion.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const nombre = document.getElementById('nombre').value.trim();
-            const telefono = document.getElementById('telefono').value.trim();
-            const vehiculo = document.getElementById('vehiculo').value;
-            const servicio = document.getElementById('servicio').value;
-            const mensaje = document.getElementById('mensaje').value.trim();
+            const marca = document.getElementById('marca').value.trim();
+            const modelo = document.getElementById('modelo').value.trim();
+            const anio = document.getElementById('anio').value.trim();
 
-            if (!nombre || !telefono || !vehiculo || !servicio) {
+            if (!marca || !modelo || !anio) {
                 mostrarMensajeFormulario('Por favor completa los campos obligatorios.', 'error');
                 return;
             }
 
             const texto = [
-                'Hola, vengo de la página de CARFILMS y quiero solicitar una cotización.',
+                '¡Hola! 👋 Llegué a CARFILMS a través de su página web y quiero recibir información para realizar la instalación de PPF completo en mi vehículo.',
                 '',
-                'Nombre: ' + nombre,
-                'Teléfono: ' + telefono,
-                'Vehículo: ' + vehiculo,
-                'Servicio: ' + servicio,
-                mensaje ? 'Mensaje: ' + mensaje : ''
-            ].filter(Boolean).join('%0A');
+                '🚘 Marca: ' + marca,
+                '🚘 Modelo: ' + modelo,
+                '🚘 Año: ' + anio,
+                '',
+                'Me gustaría conocer las opciones disponibles, el valor de la instalación y la garantía del servicio.',
+                '',
+                '¡Muchas gracias! Quedo atento(a).'
+            ].join('\n');
 
-            const url = 'https://wa.me/573022469542?text=' + texto;
+            const url = 'https://wa.me/573022469542?text=' + encodeURIComponent(texto);
 
             btnSubmit.textContent = 'Abriendo WhatsApp…';
             btnSubmit.disabled = true;

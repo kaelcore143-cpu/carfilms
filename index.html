@@ -611,43 +611,22 @@
             <div class="section-header">
                 <span class="section-tag">Cotización</span>
                 <h2 class="section-title">Solicita tu cotización personalizada</h2>
-                <p class="section-subtitle">Envíanos los datos de tu vehículo y el servicio que te interesa. Te responderemos por WhatsApp.</p>
+                <p class="section-subtitle">Envíanos los datos de tu vehículo y te responderemos por WhatsApp con la información de la instalación de PPF completo.</p>
             </div>
             <form class="form-cotizacion" id="formCotizacion" novalidate>
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez" aria-required="true">
+                        <label for="marca">Marca</label>
+                        <input type="text" id="marca" name="marca" required placeholder="Ej. Toyota" autocomplete="off" aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label for="telefono">Teléfono / WhatsApp</label>
-                        <input type="tel" id="telefono" name="telefono" required placeholder="+57 300 000 0000" aria-required="true">
+                        <label for="modelo">Modelo</label>
+                        <input type="text" id="modelo" name="modelo" required placeholder="Ej. Corolla" autocomplete="off" aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label for="vehiculo">Tipo de vehículo</label>
-                        <select id="vehiculo" name="vehiculo" required aria-required="true">
-                            <option value="">Selecciona</option>
-                            <option value="sedan">Sedán</option>
-                            <option value="suv">SUV / Camioneta</option>
-                            <option value="pickup">Pickup</option>
-                            <option value="coupe">Coupé / Deportivo</option>
-                            <option value="otro">Otro</option>
-                        </select>
+                        <label for="anio">Año</label>
+                        <input type="number" id="anio" name="anio" required placeholder="Ej. 2024" min="1900" max="2100" inputmode="numeric" aria-required="true">
                     </div>
-                    <div class="form-group">
-                        <label for="servicio">Servicio de interés</label>
-                        <select id="servicio" name="servicio" required aria-required="true">
-                            <option value="">Selecciona</option>
-                            <option value="ppf">PPF Completo</option>
-                            <option value="polarizado">Polarizado Profesional</option>
-                            <option value="wrap">Wrap Completo</option>
-                            <option value="detailing">Detailing Premium</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group full">
-                    <label for="mensaje">Mensaje opcional</label>
-                    <textarea id="mensaje" name="mensaje" rows="3" placeholder="Año, modelo, color o cualquier detalle…"></textarea>
                 </div>
                 <div class="form-group terms">
                     <input type="checkbox" id="terminos" name="terminos" required>
